@@ -1,0 +1,438 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    overflow-x: clip;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    overflow-x: clip;
+    background-color: black;
+    font-family: 'Rajdhani', sans-serif;
+    color: antiquewhite;
+}
+
+header,
+footer{
+    padding: 16px clamp(16px, 4vw, 40px);
+}
+
+header p,
+footer p{
+    margin: 0;
+}
+
+main{
+    width: 100%;
+    padding: 0 clamp(12px, 3vw, 32px);
+}
+
+article{
+    width: min(100%, 1400px);
+    margin: 0 auto;
+}
+
+.filme-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0;
+    margin:0;
+}
+
+
+.filme-name h2,
+h3{
+    font-family: 'Orbitron', sans-serif;
+}
+
+.filme-name h1{
+    letter-spacing: 0.08em;
+    font-size: clamp(2rem, 11.2vw, 10rem);
+    text-align: center;
+}
+
+.glitch{
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+    color: #f2eeee;
+    animation: glitch-jitter 3s infinite;
+}
+
+.filme-name h2{
+    max-width: 100%;
+    padding: 0 8px;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    text-align: center;
+}
+
+.glitch-red{
+    color: #d71920;
+}
+
+@keyframes glitch-jitter{
+    0%, 92%, 94%, 96%, 100% { transform: translate(0) skew(0); }
+    93% { transform: translate(-3px, 1px) skew(-1deg); }
+    95% { transform: translate(3px, -1px) skew(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .glitch{
+        animation: none;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.h1 {
+  font-family: 'Bebas Neue', 'Impact', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+}
+
+.filme-name h2,
+h3{
+    font-weight: 700;
+}
+
+.carrossel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: clamp(12px, 3vw, 20px);
+}
+
+.carrossel-movimento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+}
+
+.carrossel .box{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 280px;
+    min-width: 0;
+    max-width: 360px;
+    height: clamp(320px, 36vw, 400px);
+    isolation: isolate;
+    outline: none;
+}
+
+.carrossel .box::before,
+.carrossel .box::after{
+    content: '';
+    position: absolute;
+    inset: 0 10%;
+    z-index: -1;
+    border-radius: 8px;
+    background: linear-gradient(315deg, #d71920, #26040a);
+    transform: skewX(5deg);
+    transition: 0.5s;
+}
+
+.carrossel .box::after{
+    filter: blur(24px);
+}
+
+.carrossel .box:hover::before,
+.carrossel .box:hover::after,
+.carrossel .box:focus::before,
+.carrossel .box:focus::after{
+    inset: 0;
+    transform: skewX(0);
+}
+
+.carrossel .box:nth-child(even)::before,
+.carrossel .box:nth-child(even)::after{
+    background: linear-gradient(315deg, #7c1018, #171717);
+}
+
+.carrossel .card-image{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    filter: brightness(0.68);
+    transition: filter 0.5s;
+}
+
+.carrossel .box:hover .card-image,
+.carrossel .box:focus .card-image{
+    filter: brightness(0.3);
+}
+
+.carrossel .box > span{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carrossel .box > span::before,
+.carrossel .box > span::after{
+    content: '';
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 3s ease-in-out infinite;
+}
+
+.carrossel .box > span::before{
+    top: 0;
+    left: 12px;
+}
+
+.carrossel .box > span::after{
+    right: 12px;
+    bottom: 0;
+    animation-delay: -1.5s;
+}
+
+.carrossel .box:hover > span::before,
+.carrossel .box:focus > span::before{
+    top: -24px;
+    left: -12px;
+    opacity: 1;
+}
+
+.carrossel .box:hover > span::after,
+.carrossel .box:focus > span::after{
+    right: -12px;
+    bottom: -24px;
+    opacity: 1;
+}
+
+.carrossel .content{
+    position: relative;
+    z-index: 2;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+    background: rgba(12, 8, 9, 0.76);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: 0.4s;
+}
+
+.carrossel .box:hover .content,
+.carrossel .box:focus .content{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carrossel .content h2{
+    color: #ff4048;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.25rem;
+}
+
+.carrossel .content p{
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.carrossel .box:focus-visible{
+    outline: 2px solid #ff4048;
+    outline-offset: 6px;
+}
+
+.about-movie{
+    margin: 36px 0;
+}
+
+.about-movie > h3{
+    margin-bottom: 18px;
+}
+
+.about-movie-layout{
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: stretch;
+    gap: 24px;
+}
+
+.about-video-card{
+    min-width: 0;
+    width: 100%;
+    align-self: start;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(255, 64, 72, 0.45);
+    border-radius: 10px;
+    background: #10090a;
+    box-shadow: 0 0 24px rgba(219, 18, 25, 0.3);
+}
+
+.about-video-card iframe{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.about-movie-text{
+    min-width: 0;
+    padding: 22px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: linear-gradient(145deg, rgba(35, 12, 15, 0.92), rgba(12, 8, 9, 0.92));
+}
+
+.about-movie-text h4{
+    margin: 0 0 8px;
+    color: #ff4048;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+}
+
+.about-movie-text p{
+    margin: 0 0 18px;
+    line-height: 1.65;
+}
+
+.about-movie-text p:last-child{
+    margin-bottom: 0;
+}
+
+.tech-sheet-section{
+    position: relative;
+    isolation: isolate;
+    width: min(100%, 900px);
+    min-height: 300px;
+    margin: 32px auto;
+    overflow: hidden;
+    border: 1px solid rgba(255, 64, 72, 0.45);
+    border-radius: 8px;
+    background: #10090a;
+    box-shadow: 0 0 24px rgba(219, 18, 25, 0.35);
+}
+
+.tech-sheet-background{
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tech-sheet-section::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.68);
+}
+
+.tech-sheet-content{
+    padding: clamp(20px, 5vw, 36px);
+}
+
+.tech-sheet-content h3{
+    margin: 0 0 20px;
+    color: #ff4048;
+}
+
+.tech-sheet{
+    margin: 0;
+    padding-left: 24px;
+    line-height: 1.8;
+}
+
+@keyframes animate{
+    0%, 100% { transform: translateY(8px); }
+    50% { transform: translateY(-8px); }
+}
+
+@media (hover: none){
+    .carrossel .content{
+        opacity: 1;
+        transform: none;
+    }
+
+    .carrossel .card-image{
+        filter: brightness(0.3);
+    }
+}
+
+@media (max-width: 860px){
+    .about-movie-layout{
+        grid-template-columns: 1fr;
+    }
+
+    .about-movie-text{
+        padding: 20px;
+    }
+
+    .tech-sheet-section{
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 480px){
+    .filme-name h1{
+        letter-spacing: 0.04em;
+        font-size: clamp(2rem, 10.5vw, 3rem);
+    }
+
+    .carrossel-movimento{
+        gap: 18px;
+    }
+
+    .carrossel .box{
+        flex-basis: 100%;
+        max-width: 360px;
+        height: min(110vw, 400px);
+        min-height: 300px;
+    }
+
+    .carrossel .content{
+        padding: 18px;
+    }
+
+    .about-movie-text{
+        padding: 18px;
+    }
+
+    .tech-sheet{
+        padding-left: 20px;
+    }
+
+    footer{
+        text-align: center;
+    }
+}

@@ -3,21 +3,21 @@
     --secondary--color: #06b6d4;
     --bg-color: #ced1d3;
     --card-bg: #fafafa;
-    --text-main: #le293b;
+    --text-main: #1e293b;
     --text-muted: #64748b;
     --border-color: #2ee8f0;
     --radius: 12px;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
 }
 
-body{
+body {
     background-color: var(--bg-color);
-    font-family: "Gill Sans";
+    font-family: "Gill Sans", "Segoe UI", sans-serif;
     color: var(--text-main);
     line-height: 1.6;
     max-width: 1200px;
@@ -25,44 +25,288 @@ body{
     padding: 24px;
 }
 
-header{
-    background: linear-gradient(130deg,var(--primary-color), var(--secondary--color));
+header {
+    background: linear-gradient(130deg, var(--primary-color), var(--secondary--color));
     color: white;
     padding: 3rem 2rem;
     border-radius: var(--radius);
     text-align: center;
     margin-bottom: 2rem;
-    box-shadow: 0 10px 15px -3px rgb(75, 73, 73);
+    box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.35);
 }
-header h1{
+
+header h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-
 }
-header p{
+
+header p {
     font-size: 1.1rem;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 hr {
-    border:  none;
+    border: none;
     height: 1px;
     background-color: var(--border-color);
     margin: 2rem 0;
 }
+
 nav {
     background: var(--card-bg);
     padding: 1.25rem 1.5rem;
-    border-radius: var(--bg-color);
-    box-shadow: 0 2px 3px 0 var(--text-muted);
     border-radius: var(--radius);
-    border: 1px solid var(--text-main);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(30, 41, 59, 0.08);
     margin-bottom: 2rem;
 }
-nav h2{
+
+nav h2 {
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
     color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: 0.05rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    background: rgba(79, 70, 229, 0.08);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2.2fr 0.8fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section > h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+article {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 8px 20px -18px rgba(15, 23, 42, 0.7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 24px -18px rgba(15, 23, 42, 0.8);
+}
+
+article h3 {
+    color: var(--text-main);
+    font-size: 1.35rem;
+}
+
+article p {
+    color: var(--text-muted);
+}
+
+article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+article a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+aside {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(30, 41, 59, 0.08);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 8px 20px -18px rgba(15, 23, 42, 0.7);
+}
+
+aside h2,
+aside h3 {
+    font-size: 1.15rem;
+    color: var(--text-main);
+}
+
+aside img {
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 3px solid rgba(79, 70, 229, 0.2);
+}
+
+aside p {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+aside ol {
+    padding-left: 1.2rem;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+aside li {
+    list-style: none;
+}
+
+aside a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 46px;
+    padding: 0 18px;
+    color: #fff;
+    background: linear-gradient(45deg, #4f46e5, #06b6d4);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: 0.5s ease;
+}
+
+aside a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background: linear-gradient(45deg, var(--i, #4f46e5), var(--j, #06b6d4));
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+aside a::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #4f46e5, #06b6d4);
+    filter: blur(12px);
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+aside a:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+aside a:hover::before {
+    opacity: 1;
+}
+
+aside a:hover::after {
+    opacity: 0.5;
+}
+
+aside a {
+    z-index: 1;
+}
+
+aside a:hover {
+    color: #fff;
+}
+
+aside a {
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transform: scale(1);
+    transition: 0.5s ease;
+}
+
+aside a:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 16px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+article a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem ;
+    display: inline-block;
+    transition: 0.5;
+}
+
+article ol:hover a {
+    text-decoration: underline;
+    transition: 0.5;
+    
 }

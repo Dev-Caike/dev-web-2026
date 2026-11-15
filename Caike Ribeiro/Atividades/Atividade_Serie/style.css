@@ -1,0 +1,15 @@
+/* Só alguns ajustes pequenos, o resto é Bootstrap */
+.carousel-item img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}

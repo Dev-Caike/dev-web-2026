@@ -1,0 +1,123 @@
+/* ══════════════════════════════════════════════════════════════════
+   PORTFÓLIO PESSOAL — estilo.css
+   Só o que o Bootstrap não consegue fazer sozinho.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ─── VARIÁVEIS DE COR (tema dark customizado) ──────────────────── */
+:root {
+  --cor-primaria:   #6c63ff;
+  --cor-secundaria: #ff6584;
+
+  --fundo:           #0f0f1a;
+  --superficie:      #1a1a2e;
+  --superficie-alta: #22223a;
+  --borda:           #2e2e4e;
+
+  --texto:       #e8e8f0;
+  --texto-suave: #9090b8;
+}
+
+/* ─── BASE ──────────────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ─── CLASSES DE FUNDO (substitui style="background-color:...") ─── */
+.bg-fundo      { background-color: var(--fundo) !important; }
+.bg-superficie { background-color: var(--superficie) !important; }
+
+/* ─── CARDS REUTILIZÁVEIS ───────────────────────────────────────── */
+/* Card principal (projetos / sobre) */
+.card-dark {
+  background-color: var(--superficie-alta);
+}
+
+/* Card de estatística (Sobre Mim) */
+.card-stat {
+  background-color: var(--fundo);
+  border-color: var(--borda) !important;
+}
+
+/* Card de skill */
+.card-skill {
+  background-color: var(--superficie-alta);
+}
+
+/* Footer do card de projeto */
+.card-footer-dark {
+  background-color: transparent;
+  border-color: var(--borda);
+}
+
+/* ─── NAVBAR ────────────────────────────────────────────────────── */
+.navbar-portfolio {
+  background-color: rgba(15, 15, 26, 0.95) !important;
+  border-bottom: 1px solid var(--borda);
+}
+
+/* ─── HERO ──────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.foto-perfil {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--cor-primaria);
+}
+
+.hero-nome {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+@media (min-width: 992px) {
+  .foto-perfil { width: 340px; height: 340px; }
+  .hero        { padding-top: 88px; }
+}
+
+@media (max-width: 575px) {
+  .hero-nome { font-size: 2.5rem; }
+}
+
+/* ─── TÍTULO DE SEÇÃO (linha colorida embaixo) ──────────────────── */
+.titulo-secao {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+  margin-bottom: 2rem;
+}
+
+.titulo-secao::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 48px; height: 4px;
+  background-color: var(--cor-primaria);
+  border-radius: 99px;
+}
+
+/* ─── TOPO DO CARD DE PROJETO ───────────────────────────────────── */
+.card-topo {
+  height: 160px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: rgba(255,255,255,0.65);
+}
+
+/* ─── CAMPO INVÁLIDO ────────────────────────────────────────────── */
+.campo-invalido { border-color: var(--cor-secundaria) !important; }

@@ -1,0 +1,260 @@
+:root {
+    --primary-color: #1e2a78;   /* azul profundo */
+    --secundary-color: #14a3a8; /* turquesa */
+    --accent-color: #f2b134;    /* âmbar, só para foco e detalhes */
+    --link-hover: #0e7c86;      /* turquesa escuro, legível sobre branco */
+    --bg-color: #eef2f8;
+    --card-bg: #ffffff;
+    --text-main: #14213d;
+    --text-muted: #5b6b84;
+    --border-color: #d3dcea;
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* ---------- Linhas divisórias (hr) ---------- */
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 2rem 0 1.5rem;
+}
+
+/* a linha logo abaixo do cabeçalho é redundante com o menu em card */
+header + hr {
+    display: none;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+    /* o "(" precisa ficar colado em linear-gradient, senão o CSS ignora tudo */
+    background: linear-gradient(135deg, var(--primary-color), var(--secundary-color));
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 12px 28px -10px rgba(30, 42, 120, 0.5);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.92;
+}
+
+/* ---------- Menu ---------- */
+nav {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* o título "Menu" fica só para leitores de tela */
+nav h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    display: block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* ---------- Layout principal: artigos + barra lateral ---------- */
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 2rem;
+    align-items: start;
+}
+
+main section > h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* ---------- Artigos ---------- */
+article {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 14px -8px rgba(30, 42, 120, 0.25);
+}
+
+/* o <br> entre os artigos não é mais necessário */
+article + br {
+    display: none;
+}
+
+article h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+article p {
+    margin-bottom: 1rem;
+}
+
+/* linha "Publicado em ..." */
+article p:first-of-type {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+}
+
+article p:first-of-type b {
+    color: var(--text-main);
+}
+
+article img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: calc(var(--radius) - 4px);
+    margin-bottom: 1rem;
+}
+
+article a {
+    font-weight: 600;
+    text-underline-offset: 3px;
+}
+
+article a:hover {
+    color: var(--link-hover);
+}
+
+/* ---------- Barra lateral ---------- */
+aside {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: 0 4px 14px -8px rgba(30, 42, 120, 0.25);
+}
+
+aside h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+aside img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--secundary-color);
+    margin-bottom: 1rem;
+}
+
+aside p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+aside h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+aside ol {
+    padding-left: 1.4rem;
+}
+
+aside li {
+    margin-bottom: 0.25rem;
+}
+
+aside a {
+    text-underline-offset: 3px;
+}
+
+aside a:hover {
+    color: var(--link-hover);
+}
+
+/* ---------- Links em geral ---------- */
+a {
+    color: var(--primary-color);
+}
+
+a:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ---------- Tablet e celular ---------- */
+@media (max-width: 800px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+}

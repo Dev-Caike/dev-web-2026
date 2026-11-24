@@ -1,0 +1,380 @@
+/* ==========================================================
+   Interestelar — estilo.css
+   Variáveis de cores, fontes e espaçamentos ficam no :root
+   ========================================================== */
+
+:root {
+  /* Cores */
+  --cor-fundo: #070b14;
+  --cor-superficie: #0f1626;
+  --cor-superficie-2: #151e33;
+  --cor-borda: #26324d;
+  --cor-texto: #e8ecf5;
+  --cor-texto-suave: #a3aec6;
+  --cor-destaque: #f2a541;
+  --cor-destaque-2: #5fb4d9;
+
+  /* Fontes */
+  --fonte-titulo: "Orbitron", "Segoe UI", Arial, sans-serif;
+  --fonte-texto: "Inter", "Segoe UI", Arial, sans-serif;
+
+  /* Tamanhos de texto */
+  --texto-pequeno: 0.875rem;
+  --texto-base: 1rem;
+  --texto-grande: 1.25rem;
+  --titulo-secao: 1.75rem;
+  --titulo-principal: clamp(2.5rem, 7vw, 4.5rem);
+
+  /* Espaçamentos */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2.5rem;
+  --espaco-xl: 4rem;
+
+  /* Outros */
+  --raio: 12px;
+  --largura-max: 1100px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: var(--texto-base);
+  line-height: 1.7;
+  color: var(--cor-texto);
+  background:
+    radial-gradient(circle at 80% -10%, rgba(95, 180, 217, 0.15), transparent 45%),
+    radial-gradient(circle at 0% 30%, rgba(242, 165, 65, 0.08), transparent 40%),
+    var(--cor-fundo);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ---------- Cabeçalho e menu (Flexbox) ---------- */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  padding: var(--espaco-sm) var(--espaco-lg);
+  background: rgba(7, 11, 20, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho__logo {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--cor-destaque);
+}
+
+.menu__lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-md);
+}
+
+.menu__lista a {
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+  padding-bottom: var(--espaco-xs);
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.menu__lista a:hover,
+.menu__lista a:focus-visible {
+  color: var(--cor-texto);
+  border-bottom-color: var(--cor-destaque);
+}
+
+/* ---------- Conteúdo principal ---------- */
+
+main {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 var(--espaco-md);
+}
+
+/* ---------- Destaque (Flexbox) ---------- */
+
+.destaque {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-xl);
+  padding: var(--espaco-xl) 0;
+}
+
+.destaque__capa {
+  flex: 0 0 320px;
+}
+
+.destaque__capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--raio);
+  border: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra);
+  background: linear-gradient(160deg, var(--cor-superficie-2), var(--cor-fundo));
+}
+
+.destaque__capa figcaption {
+  margin-top: var(--espaco-xs);
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+.destaque__texto {
+  flex: 1;
+}
+
+.destaque__etiqueta {
+  display: inline-block;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  margin-bottom: var(--espaco-sm);
+  font-size: var(--texto-pequeno);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cor-destaque-2);
+  border: 1px solid var(--cor-destaque-2);
+  border-radius: 999px;
+}
+
+.destaque__texto h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--titulo-principal);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.destaque__subtitulo {
+  margin-bottom: var(--espaco-md);
+  font-size: var(--texto-grande);
+  color: var(--cor-destaque);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.destaque__frase {
+  max-width: 40ch;
+  margin-bottom: var(--espaco-md);
+  font-size: var(--texto-grande);
+  font-style: italic;
+  color: var(--cor-texto-suave);
+}
+
+.destaque__dados {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-md);
+}
+
+.destaque__dados li {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--espaco-sm);
+  border-left: 3px solid var(--cor-destaque);
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+.destaque__dados strong {
+  font-size: var(--texto-base);
+  color: var(--cor-texto);
+}
+
+/* ---------- Seções ---------- */
+
+.secao {
+  padding: var(--espaco-lg) 0;
+  scroll-margin-top: 80px;
+}
+
+.secao__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-sm);
+  margin-bottom: var(--espaco-md);
+  font-family: var(--fonte-titulo);
+  font-size: var(--titulo-secao);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.secao__titulo::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--cor-borda);
+}
+
+/* ---------- Sinopse ---------- */
+
+.sinopse {
+  max-width: 70ch;
+  padding: var(--espaco-md);
+  background: var(--cor-superficie);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: var(--raio);
+}
+
+.sinopse p + p {
+  margin-top: var(--espaco-sm);
+}
+
+/* ---------- Elenco (Grid) ---------- */
+
+.elenco {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espaco-md);
+}
+
+.cartao {
+  padding: var(--espaco-md);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-destaque-2);
+}
+
+.cartao__ator {
+  font-size: var(--texto-grande);
+}
+
+.cartao__personagem {
+  margin-bottom: var(--espaco-xs);
+  font-size: var(--texto-pequeno);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-destaque);
+}
+
+.cartao p:last-child {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-pequeno);
+}
+
+/* ---------- Direção ---------- */
+
+.diretor {
+  padding: var(--espaco-md);
+  background: var(--cor-superficie-2);
+  border-radius: var(--raio);
+}
+
+.diretor h3 {
+  margin-bottom: var(--espaco-xs);
+  font-size: var(--texto-grande);
+  color: var(--cor-destaque);
+}
+
+.diretor p {
+  max-width: 70ch;
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- Ficha técnica (Grid) ---------- */
+
+.ficha {
+  padding: var(--espaco-md);
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.ficha__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espaco-md);
+}
+
+.ficha__lista dt {
+  font-size: var(--texto-pequeno);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cor-destaque-2);
+}
+
+.ficha__lista dd {
+  color: var(--cor-texto);
+}
+
+/* ---------- Rodapé ---------- */
+
+.rodape {
+  margin-top: var(--espaco-xl);
+  padding: var(--espaco-lg) var(--espaco-md);
+  text-align: center;
+  font-size: var(--texto-pequeno);
+  color: var(--cor-texto-suave);
+  border-top: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 800px) {
+  .cabecalho {
+    justify-content: center;
+    padding: var(--espaco-sm) var(--espaco-md);
+  }
+
+  .destaque {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--espaco-lg);
+    padding: var(--espaco-lg) 0;
+  }
+
+  .destaque__capa {
+    flex: none;
+    width: min(280px, 80%);
+  }
+
+  .destaque__frase {
+    margin-inline: auto;
+  }
+
+  .destaque__dados {
+    justify-content: center;
+    text-align: left;
+  }
+}

@@ -1,0 +1,286 @@
+/* Definição das variáveis globais no :root */
+:root {
+  /* Cores */
+  --cor-primaria: #e62429;
+  --cor-primaria-escura: #a81418;
+  --cor-secundaria: #1d4ed8;
+  --cor-destaque: #38bdf8;
+  --cor-fundo: #0b0f19;
+  --cor-superficie: #131b2e;
+  --cor-superficie-hover: #1b2640;
+  --cor-texto: #f8fafc;
+  --cor-texto-suave: #94a3b8;
+  --cor-borda: rgba(255, 255, 255, 0.12);
+
+  /* Fontes */
+  --fonte-principal: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --fonte-titulo: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --tam-titulo-principal: 2.4rem;
+  --tam-titulo-secao: 1.6rem;
+  --tam-texto: 1rem;
+  --tam-pequeno: 0.875rem;
+
+  /* Espaçamentos e Layout */
+  --espaco-xs: 0.5rem;
+  --espaco-sm: 1rem;
+  --espaco-md: 1.5rem;
+  --espaco-lg: 2.5rem;
+  --espaco-xl: 3.5rem;
+  --raio-borda: 12px;
+  --largura-maxima: 1100px;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-principal);
+  font-size: var(--tam-texto);
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--largura-maxima);
+  margin: 0 auto;
+}
+
+/* Cabeçalho e Navegação (Flexbox) */
+.cabecalho {
+  background: linear-gradient(135deg, var(--cor-primaria-escura) 0%, var(--cor-fundo) 65%, var(--cor-secundaria) 100%);
+  border-bottom: 2px solid var(--cor-primaria);
+  padding: var(--espaco-lg) 0;
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-md);
+}
+
+.tag-destaque {
+  display: inline-block;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  font-size: var(--tam-pequeno);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  margin-bottom: var(--espaco-xs);
+}
+
+.marca h1 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-principal);
+  line-height: 1.2;
+}
+
+.subtitulo {
+  color: var(--cor-texto-suave);
+  margin-top: 0.25rem;
+}
+
+.navegacao ul {
+  list-style: none;
+  display: flex;
+  gap: var(--espaco-sm);
+}
+
+.navegacao a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 600;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border-radius: var(--raio-borda);
+  border: 1px solid var(--cor-borda);
+  background-color: rgba(19, 27, 46, 0.7);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.navegacao a:hover {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+}
+
+/* Conteúdo Principal */
+.principal {
+  padding: var(--espaco-xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xl);
+}
+
+/* Seção Capa + Sinopse (CSS Grid) */
+.secao-filme {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--espaco-lg);
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-lg);
+  align-items: start;
+}
+
+.capa-filme img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--raio-borda);
+  border: 2px solid var(--cor-primaria);
+  display: block;
+}
+
+.capa-filme figcaption {
+  margin-top: var(--espaco-xs);
+  font-size: var(--tam-pequeno);
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+.detalhes-sinopse h2,
+.secao-bloco h2 {
+  font-family: var(--fonte-titulo);
+  font-size: var(--tam-titulo-secao);
+  margin-bottom: var(--espaco-md);
+  padding-left: var(--espaco-sm);
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.detalhes-sinopse p {
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-texto);
+}
+
+/* Badges de Diretor / Duração / Gênero (Flexbox) */
+.info-rapida {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  margin-top: var(--espaco-md);
+}
+
+.badge-info {
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-left: 3px solid var(--cor-destaque);
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-info .rotulo {
+  font-size: var(--tam-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+/* Grids de Ficha Técnica e Elenco */
+.grid-ficha,
+.grid-elenco {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--espaco-md);
+}
+
+.card-ficha,
+.card-ator {
+  background-color: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-borda);
+  padding: var(--espaco-md);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.card-ficha:hover,
+.card-ator:hover {
+  transform: translateY(-4px);
+  background-color: var(--cor-superficie-hover);
+  border-color: var(--cor-primaria);
+}
+
+.card-ficha h3 {
+  font-size: var(--tam-pequeno);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cor-destaque);
+  margin-bottom: var(--espaco-xs);
+}
+
+.papel-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  background-color: rgba(230, 36, 41, 0.15);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  margin-bottom: var(--espaco-xs);
+}
+
+.card-ator h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-ator p {
+  color: var(--cor-texto-suave);
+  font-size: var(--tam-pequeno);
+}
+
+/* Rodapé (Flexbox) */
+.rodape {
+  background-color: var(--cor-superficie);
+  border-top: 1px solid var(--cor-borda);
+  padding: var(--espaco-md) 0;
+  margin-top: var(--espaco-lg);
+}
+
+.rodape-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  font-size: var(--tam-pequeno);
+  color: var(--cor-texto-suave);
+}
+
+.voltar-topo {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.voltar-topo:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .secao-filme {
+    grid-template-columns: 1fr;
+  }
+
+  .capa-filme {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .marca h1 {
+    font-size: 1.9rem;
+  }
+}

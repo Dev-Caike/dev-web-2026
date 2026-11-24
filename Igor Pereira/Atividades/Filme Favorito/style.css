@@ -1,0 +1,136 @@
+/* Batman: O Cavaleiro das Trevas — CSS puro */
+:root {
+  --preto: #090b0d;
+  --escuro: #111518;
+  --cinza: #273034;
+  --cinza-claro: #aab1af;
+  --branco: #eef0eb;
+  --vermelho: #c73535;
+  --amarelo: #d7ab45;
+  --linha: rgba(238, 240, 235, .16);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--branco); background: var(--preto); font-family: var(--sans); line-height: 1.6; }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+.container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+.topo { position: absolute; z-index: 10; top: 0; right: 0; left: 0; border-bottom: 1px solid var(--linha); background: rgba(9, 11, 13, .38); }
+.barra { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
+.logo { color: var(--branco); font-weight: 900; letter-spacing: -.07em; text-decoration: none; }
+.logo-bat { display: inline-block; color: var(--amarelo); font-size: 18px; }
+.logo-man { font-size: 18px; }
+.menu { display: flex; gap: 34px; margin: 0; padding: 0; list-style: none; }
+.menu a, .ano { color: var(--cinza-claro); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
+.menu a:hover { color: var(--amarelo); }
+.ano { color: var(--amarelo); }
+
+.hero { position: relative; display: flex; min-height: 780px; align-items: center; overflow: hidden; background: var(--preto); }
+.hero-imagem { position: absolute; inset: 0; background: url('https://files.manuscdn.com/search-media/310519663930802616/kAe8iV0B3P0kUjsEfJicr5/vZih36cHu7PWp84BV8PnMh.jpg') center/cover no-repeat; filter: saturate(.7) contrast(1.12); opacity: .72; }
+.hero-sombra { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,11,13,.98) 0%, rgba(9,11,13,.76) 38%, rgba(9,11,13,.18) 100%), linear-gradient(0deg, rgba(9,11,13,.95), transparent 45%); }
+.hero-conteudo { position: relative; z-index: 1; padding-top: 100px; }
+.etiqueta, .numero-secao { margin: 0 0 22px; color: var(--amarelo); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.hero h1 { max-width: 720px; margin: 0; font: 700 clamp(4.4rem, 11vw, 9.3rem)/.84 var(--serif); letter-spacing: -.08em; }
+.hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--branco); }
+.hero-descricao { max-width: 420px; margin: 38px 0 28px; color: #d0d5d2; font: italic 18px/1.5 var(--serif); }
+.botao { display: inline-flex; gap: 26px; align-items: center; padding: 13px 17px; border: 1px solid var(--branco); color: var(--branco); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: .25s ease; }
+.botao:hover { border-color: var(--amarelo); color: var(--amarelo); transform: translateX(4px); }
+.botao span { color: var(--amarelo); font-size: 17px; }
+.hero-lateral { position: absolute; right: 28px; bottom: 100px; color: rgba(238,240,235,.5); font-size: 9px; letter-spacing: .26em; writing-mode: vertical-rl; }
+
+.ficha { padding: 130px 0 110px; background: var(--branco); color: var(--preto); }
+.ficha-grid, .legado-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+.numero-secao { color: var(--vermelho); }
+.numero-secao span { color: #707875; }
+h2 { margin: 0; font: 700 clamp(2.8rem, 6vw, 5.7rem)/.9 var(--serif); letter-spacing: -.07em; }
+h2 em { color: var(--vermelho); font-style: normal; }
+.texto-grande { max-width: 400px; margin: 32px 0 0; font: 700 22px/1.38 var(--serif); }
+.ficha-texto { padding-top: 43px; color: #555d5b; }
+.ficha-texto p { max-width: 500px; margin: 0 0 20px; font-size: 15px; }
+.ficha-texto strong { color: var(--preto); }
+.dados-filme { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: 42px; padding-top: 20px; border-top: 1px solid #c9ceca; }
+.dados-filme span, .dados-filme strong { display: block; }
+.dados-filme span { margin-bottom: 4px; color: #7a827f; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.dados-filme strong { font-size: 13px; }
+
+.galeria { padding: 100px 0; background: #171c1f; }
+.galeria-grid { display: grid; grid-template-columns: 1.4fr .7fr .75fr; gap: 25px; align-items: center; }
+.imagem-quadro { margin: 0; }
+.imagem-quadro img { width: 100%; height: 320px; object-fit: cover; filter: grayscale(.3) contrast(1.08); }
+.imagem-vertical img { height: 390px; }
+.imagem-quadro figcaption { margin-top: 12px; color: #7f8985; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.galeria-nota { padding: 20px; border-top: 1px solid var(--amarelo); border-bottom: 1px solid var(--amarelo); }
+.sinal { color: var(--amarelo); font-weight: 700; letter-spacing: .25em; }
+.galeria-nota p { margin: 25px 0 18px; font: italic 22px/1.25 var(--serif); }
+.galeria-nota small { color: var(--cinza-claro); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+
+.personagens { padding: 130px 0; background: var(--preto); }
+.cabecalho-secao { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 58px; }
+.cabecalho-copy { max-width: 280px; margin: 0 0 5px; color: var(--cinza-claro); font-size: 14px; }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.card-personagem { overflow: hidden; border: 1px solid var(--linha); background: var(--escuro); transition: transform .25s ease, border-color .25s ease; }
+.card-personagem:hover { border-color: var(--amarelo); transform: translateY(-8px); }
+.card-topo { position: relative; display: flex; align-items: flex-end; justify-content: space-between; height: 190px; padding: 20px; overflow: hidden; }
+.card-topo::after { position: absolute; inset: 0; content: ''; opacity: .4; background: repeating-linear-gradient(135deg, transparent 0 10px, rgba(255,255,255,.18) 11px 12px); }
+.card-batman { background: linear-gradient(140deg, #26363b, #111619); }
+.card-coringa { background: linear-gradient(140deg, #4a4b35, #1e2521); }
+.card-dent { background: linear-gradient(140deg, #635b50, #242725); }
+.card-gordon { background: linear-gradient(140deg, #3d4b51, #172027); }
+.inicial { position: relative; z-index: 1; color: var(--branco); font: 700 75px/.7 var(--serif); letter-spacing: -.12em; }
+.simbolo { position: relative; z-index: 1; color: var(--amarelo); font-size: 30px; }
+.card-corpo { padding: 25px 21px 28px; }
+.ator { margin: 0 0 7px; color: var(--amarelo); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.card-corpo h3 { margin: 0 0 12px; font: 700 27px var(--serif); }
+.card-corpo p:last-child { min-height: 70px; margin: 0; color: #8b9691; font-size: 13px; }
+
+.legado { padding: 110px 0; background: var(--vermelho); }
+.legado .numero-secao { color: #f0c1ae; }
+.legado .numero-secao span { color: #f1d0c5; }
+.legado h2 { color: var(--branco); }
+.legado h2 em { color: #1b0e0e; }
+.legado-copy { padding-top: 42px; }
+.legado-copy p { max-width: 490px; margin: 0; color: #f6d9cf; font-size: 17px; }
+.legado-copy strong { color: var(--branco); }
+.linha-destaque { display: flex; align-items: center; gap: 18px; margin-top: 45px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.35); color: #f3c5b6; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+.linha-destaque strong { color: var(--branco); font: 700 29px var(--serif); letter-spacing: -.05em; }
+
+.rodape { padding: 26px 0; background: #070809; }
+.rodape-conteudo { display: flex; align-items: center; justify-content: space-between; gap: 20px; color: #77817d; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.rodape-logo { color: var(--branco); font-weight: 700; }
+.rodape-logo span { color: var(--amarelo); }
+.rodape a { color: var(--amarelo); text-decoration: none; }
+
+@media (max-width: 850px) {
+  .hero { min-height: 680px; }
+  .hero h1 { font-size: clamp(3.8rem, 15vw, 7rem); }
+  .ficha-grid, .legado-grid { grid-template-columns: 1fr; gap: 25px; }
+  .ficha-texto, .legado-copy { padding-top: 0; }
+  .galeria-grid { grid-template-columns: 1fr 1fr; }
+  .imagem-grande { grid-column: span 2; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(100% - 32px, 1160px); }
+  .barra { min-height: 65px; }
+  .menu { display: none; }
+  .hero { min-height: 620px; }
+  .hero-conteudo { padding-top: 80px; }
+  .hero-lateral { display: none; }
+  .hero-descricao { font-size: 16px; }
+  .ficha, .personagens { padding: 80px 0; }
+  .galeria { padding: 70px 0; }
+  .galeria-grid { grid-template-columns: 1fr; }
+  .imagem-grande { grid-column: auto; }
+  .imagem-quadro img, .imagem-vertical img { height: 300px; }
+  .galeria-nota { order: 3; }
+  .cabecalho-secao { display: block; margin-bottom: 38px; }
+  .cabecalho-copy { margin-top: 25px; }
+  .cards { grid-template-columns: 1fr; }
+  .card-topo { height: 145px; }
+  .rodape-conteudo { align-items: flex-start; flex-direction: column; }
+}

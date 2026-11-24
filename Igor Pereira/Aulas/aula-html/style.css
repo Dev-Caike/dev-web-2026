@@ -1,0 +1,227 @@
+:root {
+    --Primary-Color: #4B0082; /* Cor primária */
+    --Secondary-Color: #ff00f2; /* Cor secundária */
+--bg-Color: #30014b; /* Cor de fundo */
+--card-bg: #dd1ccdcc; /* Cor do card */
+--text-main: #d8d8d8; /* Cor do texto principal */
+--text-muted: #808080; /* Cor do texto secundário */
+--border-color: #f7f7f7; /* Cor da borda */
+--radius: 12px; /* Raio da borda */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+background-color: var(--bg-Color);
+font-family: Arial, sans-serif;
+color: var(--text-main);
+line-height: 1.6;
+max-width: 1200px;
+margin: 0 auto;
+padding: 24px;
+}
+
+header {
+    background: linear-gradient(var(--Primary-Color), var(--Secondary-Color));
+    color: var(--text-main);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 15px rgb(199, 73, 238);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.5;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: var(--border-color);
+    margin: 2rem 0;
+}
+
+nav {
+    background: var(--card-bg);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 5px rgb(197, 119, 248);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+nav h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--Primary-Color);
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;    
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--bg-Color);
+}
+
+main {
+    display: grid;
+   flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+section {
+    display : flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section > h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+}
+
+article {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 5px rgb(197, 119, 248);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgb(199, 73, 238);
+}
+
+article h3 {
+    font-size: 1.35rem;
+    color: var(--text-main);
+}
+
+article img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: calc(var(--radius) - 4px);
+}
+
+article a {
+    color: var(--text-main);
+    font-weight: 600;
+margin-top: 0.5rem;
+text-decoration: none;
+display: inline-block;
+transition: color 0.5s ease;
+}
+
+article a:hover {
+text-decoration: underline;
+opacity: 0.6;
+color: var(--bg-Color);
+}
+
+aside {
+    background: var(--card-bg);
+    padding: 1.3rem;
+    border-radius: var(--radius);
+    box-shadow: 0 5px 5px rgb(197, 119, 248);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+aside h3 {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+aside p {
+    font-size: 1.08rem;
+    color: var(--text-main);
+    text-align: center;
+}
+
+/*aside img {
+
+    width: 360px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 50%;
+}*/
+
+aside ol {
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+aside ol a {
+color: var(--text-main);
+    font-weight: 600;
+margin-top: 0.5rem;
+text-decoration: none;
+display: inline-block;
+transition: color 0.5s ease;
+}
+
+aside ol a:hover {
+    text-decoration: underline;
+    opacity: 0.6;
+    color: var(--bg-Color);
+}
+
+aside ol li {
+    color: var(--text-main);
+    font-weight: 600;
+margin-top: 0.5rem;
+}
+
+footer {
+   text-align: center;
+   padding: 1rem;
+   color: var(--text-muted);
+   font-size: 0.9rem;
+   margin-top: 2rem;
+}

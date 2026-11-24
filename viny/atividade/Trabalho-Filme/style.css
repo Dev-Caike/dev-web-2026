@@ -1,0 +1,109 @@
+/* Variáveis CSS obrigatórias no :root */
+:root {
+  --cor-primaria-neon: #00b4d8;
+  --cor-secundaria-miami: #0077b6;
+  --cor-escura: #0b132b;
+  --cor-superficie-escura: #1c2541;
+  --cor-fundo-pagina: #f4f6f9;
+  --cor-texto-principal: #212529;
+  --fonte-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --espacamento-padrao: 12px;
+  --altura-carrossel: 460px;
+}
+
+body {
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-principal);
+}
+
+.navbar-brand {
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.badge-miami {
+  background-color: var(--cor-primaria-neon);
+  color: var(--cor-escura);
+  font-weight: 700;
+}
+
+/* Carrossel */
+.carousel-item {
+  height: var(--altura-carrossel);
+  background-color: var(--cor-escura);
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: brightness(0.5);
+}
+
+.carousel-caption {
+  bottom: 2.5rem;
+  text-align: left;
+  max-width: 680px;
+}
+
+/* Capa do filme na seção de sinopse */
+.capa-filme {
+  flex: 0 0 160px;
+  max-width: 160px;
+}
+
+.capa-filme img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--cor-primaria-neon);
+}
+
+/* Ficha técnica lateral */
+.aside-ficha {
+  background-color: var(--cor-superficie-escura);
+}
+
+/* Títulos das seções */
+.section-title {
+  border-left: 5px solid var(--cor-primaria-neon);
+  padding-left: var(--espacamento-padrao);
+}
+
+/* Cards do elenco com Flexbox e animação hover */
+.character-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.character-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(11, 19, 43, 0.16) !important;
+}
+
+.character-img-wrapper {
+  height: 230px;
+  overflow: hidden;
+  background-color: var(--cor-superficie-escura);
+}
+
+.character-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-escura);
+  color: #adb5bd;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 360px;
+  }
+}

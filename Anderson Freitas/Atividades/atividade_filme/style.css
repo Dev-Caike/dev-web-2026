@@ -1,0 +1,196 @@
+:root {
+    --fundo: #10131b;
+    --roxo: #292039;
+    --rosa: #e85d9e;
+    --azul: #71c9ce;
+    --branco: #f4f0f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--branco);
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+
+header {
+    background-color: var(--roxo);
+    padding: 35px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 38px;
+    color: var(--azul);
+    margin: 10px;
+}
+
+.subtitulo {
+    color: var(--rosa);
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+/* Apresentação */
+
+.principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 8%;
+    gap: 40px;
+}
+
+.texto-principal {
+    max-width: 450px;
+}
+
+.texto-principal h2 {
+    color: var(--rosa);
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.texto-principal p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.texto-principal a {
+    display: inline-block;
+    background-color: var(--rosa);
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+}
+
+.imagem img {
+    width: 260px;
+    border: 4px solid var(--azul);
+}
+
+/* Informações */
+
+.informacoes {
+    background-color: var(--roxo);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 25px;
+}
+
+.informacoes h3 {
+    color: var(--azul);
+    margin-bottom: 8px;
+}
+
+/* Sinopse */
+
+.sinopse {
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 30px;
+    border-left: 4px solid var(--rosa);
+}
+
+.sinopse h2 {
+    font-size: 28px;
+    margin: 15px 0;
+    color: var(--azul);
+}
+
+.sinopse p {
+    line-height: 1.8;
+}
+
+/* Elenco */
+
+.elenco {
+    background-color: var(--roxo);
+    padding: 40px 10%;
+}
+
+.elenco h2 {
+    margin: 15px 0 25px;
+    color: var(--azul);
+}
+
+.ator {
+    padding: 18px;
+    border-bottom: 1px solid #665475;
+}
+
+.ator h3 {
+    color: var(--rosa);
+    margin-bottom: 5px;
+}
+
+/* Direção */
+
+.direcao {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.direcao h2 {
+    color: var(--azul);
+    margin-bottom: 15px;
+}
+
+.direcao p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.8;
+}
+
+/* Rodapé */
+
+footer {
+    background-color: var(--roxo);
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 {
+    color: var(--rosa);
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin: 8px;
+}
+
+/* Responsividade */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .imagem img {
+        width: 220px;
+    }
+
+    .informacoes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sinopse {
+        margin: 30px 15px;
+    }
+
+}

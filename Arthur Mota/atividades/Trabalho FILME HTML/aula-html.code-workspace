@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../GitHub/dev-web-2026/Professor/Aulas/aula-html"
+		},
+		{
+			"path": "../GitHub/dev-web-2026/Arthur Mota/Aulas/aula-de-html"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Trabalho FILME HTML"
+	}
+}

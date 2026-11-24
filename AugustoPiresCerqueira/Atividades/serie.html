@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brooklyn Nine-Nine - Página da Série</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilo temático sutil da 99ª Delegacia */
+    .hero-bg {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+    }
+    .carousel-item img {
+      height: 450px;
+      object-fit: cover;
+      filter: brightness(0.65);
+    }
+    .card-img-top {
+      height: 240px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Cabeçalho Semântico -->
+  <header class="hero-bg text-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3">
+      <a class="navbar-brand fw-bold fs-4 text-warning" href="#">NINE-NINE! 🚔</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#destaques">Destaques</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sinopse">Sinopse</a></li>
+          <li class="nav-item"><a class="nav-link" href="#elenco">Elenco</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container my-4">
+
+    <!-- Componente Obrigatório 1: Breadcrumb -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb bg-white p-3 rounded shadow-sm">
+        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Início</a></li>
+        <li class="breadcrumb-item"><a href="#" class="text-decoration-none">Séries de Comédia</a></li>
+        <li class="breadcrumb-item active fw-semibold" aria-current="page">Brooklyn Nine-Nine</li>
+      </ol>
+    </nav>
+
+    <!-- Componente Obrigatório 2: Carousel -->
+    <section id="destaques" class="mb-5">
+      <div id="carouselB99" class="carousel slide rounded overflow-hidden shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselB99" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselB99" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselB99" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Ponte do Brooklyn em Nova York">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold text-warning">99ª Delegacia do Brooklyn</h2>
+              <p class="fs-5">Onde os melhores detetives de Nova York resolvem crimes com muito humor.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1453873531674-2151bcd01707?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Viatura policial em ação">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold text-warning">Assalto de Halloween</h2>
+              <p class="fs-5">Todos os anos, a delegacia para para decidir quem é o "Incrível Detetive/Gênio".</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Vista noturna de Nova York">
+            <div class="carousel-caption d-none d-md-block">
+              <h2 class="fw-bold text-warning">8 Temporadas de Sucesso</h2>
+              <p class="fs-5">Vencedora do Globo de Ouro de Melhor Série de Comédia ou Musical.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselB99" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselB99" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Seção de Sinopse e Informações -->
+    <section id="sinopse" class="mb-5">
+      <article class="bg-white p-4 p-md-5 rounded shadow-sm border-start border-warning border-5">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <span class="badge bg-primary mb-2">Comédia Policial • 2013–2021</span>
+            <h1 class="display-5 fw-bold mb-3">Brooklyn Nine-Nine</h1>
+            <p class="lead text-secondary">
+              Jake Peralta é um detetive brilhante, porém imaturo, da 99ª Delegacia de Polícia de Nova York, no Brooklyn. 
+              Sua rotina despreocupada muda completamente quando o rigoroso e inexpressivo Capitão Raymond Holt assume o comando da equipe.
+            </p>
+            <p class="mb-0 text-muted">
+              Ao lado de colegas excêntricos como Amy Santiago, Rosa Diaz, Terry Jeffords, Charles Boyle e Gina Linetti, 
+              Jake precisa aprender a trabalhar em equipe enquanto soluciona os casos mais inusitados da cidade.
+            </p>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between"><strong>Criadores:</strong> <span>Dan Goor & Michael Schur</span></li>
+              <li class="list-group-item d-flex justify-content-between"><strong>Temporadas:</strong> <span>8 (153 episódios)</span></li>
+              <li class="list-group-item d-flex justify-content-between"><strong>Nota IMDb:</strong> <span class="badge bg-warning text-dark">8.4 / 10</span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Componente Obrigatório 3: Cards (Elenco Principal) -->
+    <section id="elenco" class="mb-5">
+      <h2 class="fw-bold mb-4 border-bottom pb-2">Elenco Principal</h2>
+      <div class="row g-4">
+        
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="card h-100 shadow-sm border-0">
+            <img src="https://m.media-amazon.com/images/M/MV5BNDg3NDk3ODI0Ml5BMl5BanBnXkFtZTgwOTE3MTE4NTM@._V1_.jpg">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Jake Peralta</h5>
+              <h6 class="card-subtitle mb-2 text-primary">Andy Samberg</h6>
+              <p class="card-text text-muted small">
+                O melhor detetive da delegacia em número de prisões, fã de <em>Duro de Matar</em> e mestre em piadas na hora errada.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <span class="badge bg-dark">Detetive</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="card h-100 shadow-sm border-0">
+            <img src="https://m.media-amazon.com/images/M/MV5BNTdlNjliZDYtZTc4ZS00M2E0LWEyZGUtYzA2NTNiMDdkOTVkXkEyXkFqcGc@._V1_.jpg">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Amy Santiago</h5>
+              <h6 class="card-subtitle mb-2 text-primary">Melissa Fumero</h6>
+              <p class="card-text text-muted small">
+                Perfeccionista, competitiva e apaixonada por fichários organizados por cores. Sonha em se tornar capitã.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <span class="badge bg-dark">Sargento</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="card h-100 shadow-sm border-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Andre_Braugher_2011_%28cropped%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Raymond Holt</h5>
+              <h6 class="card-subtitle mb-2 text-primary">Andre Braugher</h6>
+              <p class="card-text text-muted small">
+                O comandante da 99ª Delegacia. Extremamente sério, formal e dono do famoso cachorro Cheddar.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <span class="badge bg-warning text-dark">Capitão</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <article class="card h-100 shadow-sm border-0">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Stephanie_Beatriz_2018.jpg?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Rosa Diaz</h5>
+              <h6 class="card-subtitle mb-2 text-primary">Stephanie Beatriz</h6>
+              <p class="card-text text-muted small">
+                Durona, misteriosa e intimidadora. Ninguém sabe muito sobre sua vida pessoal, e todos têm um pouco de medo dela.
+              </p>
+            </div>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <span class="badge bg-dark">Detetive</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bootstrap 5 JS Bundle via CDN (necessário para o Carousel funcionar) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+breaking-bad/
+│
+├── index.html
+├── css/
+│   └── style.css
+└── img/
+    ├── breaking-bad.jpg
+    ├── walter-white.jpg
+    ├── jesse-pinkman.jpg
+    ├── skyler-white.jpg
+    └── hank-schrader.jpg

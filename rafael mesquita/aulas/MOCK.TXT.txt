@@ -1,0 +1,1128 @@
+exercício 1:
+
+ Console App (Program.cs)
+
+
+double nota1, nota2, media;
+int faltas;
+string situacao;
+
+Console.WriteLine("Informe a primeira nota:");
+nota1 = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe a segunda nota:");
+nota2 = Convert.ToDouble(Console.ReadLine());
+
+Console.WriteLine("Informe o número de faltas:");
+faltas = Convert.ToInt32(Console.ReadLine());
+
+media = (nota1 + nota2) / 2.0;
+
+if (faltas > 10)
+{
+    situacao = "Reprovado por falta";
+}
+else if (media >= 7.0)
+{
+    situacao = "Aprovado";
+}
+else
+{
+    situacao = "Reprovado por nota";
+}
+
+Console.WriteLine();
+Console.WriteLine("Média: " + Math.Round(media, 2));
+Console.WriteLine("Situação: " + situacao);
+Console.ReadKey();
+
+
+2. Web API (AlunosController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class AlunoRequest
+    {
+        public double Nota1 { get; set; }
+        public double Nota2 { get; set; }
+        public int Faltas { get; set; }
+    }
+
+    public class AlunoResponse
+    {
+        public double Media { get; set; }
+        public string Situacao { get; set; } = string.Empty;
+    }
+
+    [ApiController]
+    [Route("api/alunos")]
+    public class AlunosController : ControllerBase
+    {
+        [HttpPost("avaliacao")]
+        public IActionResult VerificarAvaliacao([FromBody] AlunoRequest request)
+        {
+            double media;
+            string situacao;
+
+            media = (request.Nota1 + request.Nota2) / 2.0;
+
+            if (request.Faltas > 10)
+            {
+                situacao = "Reprovado por falta";
+            }
+            else if (media >= 7.0)
+            {
+                situacao = "Aprovado";
+            }
+            else
+            {
+                situacao = "Reprovado por nota";
+            }
+
+            AlunoResponse resposta = new AlunoResponse();
+            resposta.Media = Math.Round(media, 2);
+            resposta.Situacao = situacao;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+exercício 2:
+
+1. Console App (Program.cs)
+
+
+Int32 idade;
+string classificacao, situacaoVoto;
+
+Console.WriteLine("Informe a idade:");
+idade = Convert.ToInt32(Console.ReadLine());
+
+if (idade <= 12)
+{
+    classificacao = "Criança";
+}
+else if (idade >= 13 && idade <= 17)
+{
+    classificacao = "Adolescente";
+}
+else if (idade >= 18 && idade <= 59)
+{
+    classificacao = "Adulto";
+}
+else
+{
+    classificacao = "Idoso";
+}
+
+if (idade < 16)
+{
+    situacaoVoto = "Não pode votar";
+}
+else if (idade == 16 || idade == 17 || idade >= 70)
+{
+    situacaoVoto = "Voto opcional";
+}
+else
+{
+    situacaoVoto = "Voto obrigatório";
+}
+
+Console.WriteLine();
+Console.WriteLine("Classificação: " + classificacao);
+Console.WriteLine("Situação do voto: " + situacaoVoto);
+Console.ReadKey();
+
+
+
+
+2. Web API (PessoasController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class PessoaResponse
+    {
+        public string Classificacao { get; set; } = string.Empty;
+        public string SituacaoVoto { get; set; } = string.Empty;
+    }
+
+    [ApiController]
+    [Route("api/pessoas")]
+    public class PessoasController : ControllerBase
+    {
+        [HttpGet("classificacao/{idade}")]
+        public IActionResult ClassificarPessoa([FromRoute] Int32 idade)
+        {
+            string classificacao, situacaoVoto;
+
+            if (idade <= 12)
+            {
+                classificacao = "Criança";
+            }
+            else if (idade >= 13 && idade <= 17)
+            {
+                classificacao = "Adolescente";
+            }
+            else if (idade >= 18 && idade <= 59)
+            {
+                classificacao = "Adulto";
+            }
+            else
+            {
+                classificacao = "Idoso";
+            }
+
+            if (idade < 16)
+            {
+                situacaoVoto = "Não pode votar";
+            }
+            else if (idade == 16 || idade == 17 || idade >= 70)
+            {
+                situacaoVoto = "Voto opcional";
+            }
+            else
+            {
+                situacaoVoto = "Voto obrigatório";
+            }
+
+            PessoaResponse resposta = new PessoaResponse();
+            resposta.Classificacao = classificacao;
+            resposta.SituacaoVoto = situacaoVoto;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+exercício 3:
+
+
+
+Console Application (Program.cs)
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Int32 idade;
+        string senha, mensagem;
+        bool contaAtiva;
+
+        Console.WriteLine("Informe a idade:");
+        idade = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Informe a senha:");
+        senha = Console.ReadLine();
+
+        Console.WriteLine("A conta está ativa?");
+        contaAtiva = Convert.ToBoolean(Console.ReadLine());
+
+        if (idade >= 18 && senha == "1234" && contaAtiva == true)
+        {
+            mensagem = "Acesso permitido.";
+        }
+        else
+        {
+            mensagem = "Acesso negado.";
+        }
+
+        Console.WriteLine();
+        Console.WriteLine(mensagem);
+        Console.ReadKey();
+    }
+}
+
+
+Web API (AcessoController.cs)
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class AcessoRequest
+    {
+        public Int32 Idade { get; set; }
+        public string Senha { get; set; } = string.Empty;
+        public bool ContaAtiva { get; set; }
+    }
+
+    public class AcessoResponse
+    {
+        public string Mensagem { get; set; } = string.Empty;
+    }
+
+    [ApiController]
+    [Route("api/acesso")]
+    public class AcessoController : ControllerBase
+    {
+        [HttpPost("validar")]
+        public IActionResult ValidarAcesso([FromBody] AcessoRequest request)
+        {
+            string mensagem;
+
+            if (request.Idade >= 18 && request.Senha == "1234" && request.ContaAtiva == true)
+            {
+                mensagem = "Acesso permitido.";
+            }
+            else
+            {
+                mensagem = "Acesso negado.";
+            }
+
+            AcessoResponse resposta = new AcessoResponse();
+            resposta.Mensagem = mensagem;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+exercício 4:
+
+
+Console Application (Program.cs)
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double salario, percentualBonificacao, valorBonificacao, salarioFinal;
+        Int32 anosEmpresa;
+
+        Console.WriteLine("Informe o salário:");
+        salario = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Informe os anos de empresa:");
+        anosEmpresa = Convert.ToInt32(Console.ReadLine());
+
+        if (salario < 2000.0)
+        {
+            percentualBonificacao = 20.0;
+        }
+        else if (salario >= 2000.0 && salario <= 5000.0)
+        {
+            percentualBonificacao = 10.0;
+        }
+        else
+        {
+            percentualBonificacao = 5.0;
+        }
+
+        if (anosEmpresa > 10)
+        {
+            percentualBonificacao = percentualBonificacao + 5.0;
+        }
+
+        valorBonificacao = salario * (percentualBonificacao / 100.0);
+        salarioFinal = salario + valorBonificacao;
+
+        Console.WriteLine();
+        Console.WriteLine("Percentual de bonificação: " + percentualBonificacao + "%");
+        Console.WriteLine("Valor da bonificação: R$ " + Math.Round(valorBonificacao, 2));
+        Console.WriteLine("Salário final: R$ " + Math.Round(salarioFinal, 2));
+        Console.ReadKey();
+    }
+}
+
+
+Web API (FuncionariosController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class FuncionarioRequest
+    {
+        public double Salario { get; set; }
+        public Int32 AnosEmpresa { get; set; }
+    }
+
+    public class FuncionarioResponse
+    {
+        public double PercentualBonificacao { get; set; }
+        public double ValorBonificacao { get; set; }
+        public double SalarioFinal { get; set; }
+    }
+
+    [ApiController]
+    [Route("api/funcionarios")]
+    public class FuncionariosController : ControllerBase
+    {
+        [HttpPost("bonificacao")]
+        public IActionResult CalcularBonificacao([FromBody] FuncionarioRequest request)
+        {
+            double percentualBonificacao, valorBonificacao, salarioFinal;
+
+            if (request.Salario < 2000.0)
+            {
+                percentualBonificacao = 20.0;
+            }
+            else if (request.Salario >= 2000.0 && request.Salario <= 5000.0)
+            {
+                percentualBonificacao = 10.0;
+            }
+            else
+            {
+                percentualBonificacao = 5.0;
+            }
+
+            if (request.AnosEmpresa > 10)
+            {
+                percentualBonificacao = percentualBonificacao + 5.0;
+            }
+
+            valorBonificacao = request.Salario * (percentualBonificacao / 100.0);
+            salarioFinal = request.Salario + valorBonificacao;
+
+            FuncionarioResponse resposta = new FuncionarioResponse();
+            resposta.PercentualBonificacao = percentualBonificacao;
+            resposta.ValorBonificacao = Math.Round(valorBonificacao, 2);
+            resposta.SalarioFinal = Math.Round(salarioFinal, 2);
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+
+exercício 5:
+
+
+
+Console Application (Program.cs)
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double valorCompra, percentualDesconto, valorDesconto, valorFinal;
+        bool clienteCadastrado;
+
+        Console.WriteLine("Informe o valor da compra:");
+        valorCompra = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Cliente cadastrado?");
+        clienteCadastrado = Convert.ToBoolean(Console.ReadLine());
+
+        if (valorCompra > 1000.0)
+        {
+            percentualDesconto = 15.0;
+        }
+        else if (valorCompra >= 500.0 && valorCompra <= 1000.0)
+        {
+            percentualDesconto = 10.0;
+        }
+        else
+        {
+            percentualDesconto = 5.0;
+        }
+
+        if (clienteCadastrado == true)
+        {
+            percentualDesconto = percentualDesconto + 5.0;
+        }
+
+        valorDesconto = valorCompra * (percentualDesconto / 100.0);
+        valorFinal = valorCompra - valorDesconto;
+
+        Console.WriteLine();
+        Console.WriteLine("Percentual de desconto: " + percentualDesconto + "%");
+        Console.WriteLine("Valor do desconto: R$ " + Math.Round(valorDesconto, 2));
+        Console.WriteLine("Valor final: R$ " + Math.Round(valorFinal, 2));
+        Console.ReadKey();
+    }
+}
+
+
+
+
+Web API (VendasController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class VendaRequest
+    {
+        public double ValorCompra { get; set; }
+        public bool ClienteCadastrado { get; set; }
+    }
+
+    public class VendaResponse
+    {
+        public double PercentualDesconto { get; set; }
+        public double ValorDesconto { get; set; }
+        public double ValorFinal { get; set; }
+    }
+
+    [ApiController]
+    [Route("api/vendas")]
+    public class VendasController : ControllerBase
+    {
+        [HttpPost("calcular")]
+        public IActionResult CalcularDesconto([FromBody] VendaRequest request)
+        {
+            double percentualDesconto, valorDesconto, valorFinal;
+
+            if (request.ValorCompra > 1000.0)
+            {
+                percentualDesconto = 15.0;
+            }
+            else if (request.ValorCompra >= 500.0 && request.ValorCompra <= 1000.0)
+            {
+                percentualDesconto = 10.0;
+            }
+            else
+            {
+                percentualDesconto = 5.0;
+            }
+
+            if (request.ClienteCadastrado == true)
+            {
+                percentualDesconto = percentualDesconto + 5.0;
+            }
+
+            valorDesconto = request.ValorCompra * (percentualDesconto / 100.0);
+            valorFinal = request.ValorCompra - valorDesconto;
+
+            VendaResponse resposta = new VendaResponse();
+            resposta.PercentualDesconto = percentualDesconto;
+            resposta.ValorDesconto = Math.Round(valorDesconto, 2);
+            resposta.ValorFinal = Math.Round(valorFinal, 2);
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+
+exercício 6:
+
+
+Console Application (Program.cs)
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Int32[] numeros = new Int32[10];
+        string ordemOriginal = "";
+        string ordemInversa = "";
+
+        Console.WriteLine("Informe os 10 números:");
+        for (Int32 i = 0; i < 10; i++)
+        {
+            numeros[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        for (Int32 i = 0; i < 10; i++)
+        {
+            ordemOriginal = ordemOriginal + numeros[i] + " ";
+        }
+
+        for (Int32 i = 9; i >= 0; i--)
+        {
+            ordemInversa = ordemInversa + numeros[i] + " ";
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Ordem original:");
+        Console.WriteLine(ordemOriginal.Trim());
+        Console.WriteLine();
+        Console.WriteLine("Ordem inversa:");
+        Console.WriteLine(ordemInversa.Trim());
+        Console.ReadKey();
+    }
+}
+
+
+
+Web API (NumerosController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class InverterNumerosRequest
+    {
+        public Int32[] Numeros { get; set; } = new Int32[0];
+    }
+
+    public class InverterNumerosResponse
+    {
+        public Int32[] OrdemOriginal { get; set; } = new Int32[0];
+        public Int32[] OrdemInversa { get; set; } = new Int32[0];
+    }
+
+    [ApiController]
+    [Route("api/numeros")]
+    public class NumerosController : ControllerBase
+    {
+        [HttpPost("inverter")]
+        public IActionResult InverterVetor([FromBody] InverterNumerosRequest request)
+        {
+            Int32 tamanho = request.Numeros.Length;
+            Int32[] original = new Int32[tamanho];
+            Int32[] inverso = new Int32[tamanho];
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                original[i] = request.Numeros[i];
+            }
+
+            Int32 posicaoInversa = 0;
+            for (Int32 i = tamanho - 1; i >= 0; i--)
+            {
+                inverso[posicaoInversa] = request.Numeros[i];
+                posicaoInversa++;
+            }
+
+            InverterNumerosResponse resposta = new InverterNumerosResponse();
+            resposta.OrdemOriginal = original;
+            resposta.OrdemInversa = inverso;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+exercício 7:
+
+
+Console Application (Program.cs
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        double[] numeros = new double[10];
+        double soma, media, maior, menor;
+
+        Console.WriteLine("Informe os 10 números:");
+        for (Int32 i = 0; i < 10; i++)
+        {
+            numeros[i] = Convert.ToDouble(Console.ReadLine());
+        }
+
+        soma = 0;
+        maior = numeros[0];
+        menor = numeros[0];
+
+        for (Int32 i = 0; i < 10; i++)
+        {
+            soma = soma + numeros[i];
+
+            if (numeros[i] > maior)
+            {
+                maior = numeros[i];
+            }
+
+            if (numeros[i] < menor)
+            {
+                menor = numeros[i];
+            }
+        }
+
+        media = soma / 10.0;
+
+        Console.WriteLine();
+        Console.WriteLine("Soma: " + soma);
+        Console.WriteLine("Média: " + Math.Round(media, 2));
+        Console.WriteLine("Maior: " + maior);
+        Console.WriteLine("Menor: " + menor);
+        Console.ReadKey();
+    }
+}
+
+
+
+Web API (EstatisticasController.cs)
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class EstatisticasRequest
+    {
+        public double[] Numeros { get; set; } = new double[0];
+    }
+
+    public class EstatisticasResponse
+    {
+        public double Soma { get; set; }
+        public double Media { get; set; }
+        public double Maior { get; set; }
+        public double Menor { get; set; }
+    }
+
+    [ApiController]
+    [Route("api/numeros")]
+    public class EstatisticasController : ControllerBase
+    {
+        [HttpPost("estatisticas")]
+        public IActionResult CalcularEstatisticas([FromBody] EstatisticasRequest request)
+        {
+            Int32 tamanho = request.Numeros.Length;
+            double soma = 0;
+            double maior = request.Numeros[0];
+            double menor = request.Numeros[0];
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                soma = soma + request.Numeros[i];
+
+                if (request.Numeros[i] > maior)
+                {
+                    maior = request.Numeros[i];
+                }
+
+                if (request.Numeros[i] < menor)
+                {
+                    menor = request.Numeros[i];
+                }
+            }
+
+            double media = soma / tamanho;
+
+            EstatisticasResponse resposta = new EstatisticasResponse();
+            resposta.Soma = soma;
+            resposta.Media = Math.Round(media, 2);
+            resposta.Maior = maior;
+            resposta.Menor = menor;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+exercício 8:
+
+
+
+Console Application (Program.cs)
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Int32[] numeros = new Int32[10];
+        Int32 quantidadePares = 0;
+        Int32 quantidadeImpares = 0;
+        Int32 somaPares = 0;
+        Int32 somaImpares = 0;
+
+        Console.WriteLine("Informe os 10 números:");
+        for (Int32 i = 0; i < 10; i++)
+        {
+            numeros[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        for (Int32 i = 0; i < 10; i++)
+        {
+            if (numeros[i] % 2 == 0)
+            {
+                quantidadePares = quantidadePares + 1;
+                somaPares = somaPares + numeros[i];
+            }
+            else
+            {
+                quantidadeImpares = quantidadeImpares + 1;
+                somaImpares = somaImpares + numeros[i];
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Quantidade de pares: " + quantidadePares);
+        Console.WriteLine("Quantidade de ímpares: " + quantidadeImpares);
+        Console.WriteLine("Soma dos pares: " + somaPares);
+        Console.WriteLine("Soma dos ímpares: " + somaImpares);
+        Console.ReadKey();
+    }
+}
+
+
+Web API (ParesImparesController.cs)
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class ParesImparesRequest
+    {
+        public Int32[] Numeros { get; set; } = new Int32[0];
+    }
+
+    public class ParesImparesResponse
+    {
+        public Int32 QuantidadePares { get; set; }
+        public Int32 QuantidadeImpares { get; set; }
+        public Int32 SomaPares { get; set; }
+        public Int32 SomaImpares { get; set; }
+    }
+
+    [ApiController]
+    [Route("api/numeros")]
+    public class ParesImparesController : ControllerBase
+    {
+        [HttpPost("pares-impares")]
+        public IActionResult ProcessarParesImpares([FromBody] ParesImparesRequest request)
+        {
+            Int32 tamanho = request.Numeros.Length;
+            Int32 quantidadePares = 0;
+            Int32 quantidadeImpares = 0;
+            Int32 somaPares = 0;
+            Int32 somaImpares = 0;
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                if (request.Numeros[i] % 2 == 0)
+                {
+                    quantidadePares = quantidadePares + 1;
+                    somaPares = somaPares + request.Numeros[i];
+                }
+                else
+                {
+                    quantidadeImpares = quantidadeImpares + 1;
+                    somaImpares = somaImpares + request.Numeros[i];
+                }
+            }
+
+            ParesImparesResponse resposta = new ParesImparesResponse();
+            resposta.QuantidadePares = quantidadePares;
+            resposta.QuantidadeImpares = quantidadeImpares;
+            resposta.SomaPares = somaPares;
+            resposta.SomaImpares = somaImpares;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+exercício 9:
+
+
+
+Console Application (Program.cs)
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Int32[] numeros = new Int32[10];
+        Int32 numeroPesquisa;
+        Int32 ocorrencias = 0;
+        string posicoes = "";
+
+        Console.WriteLine("Informe os 10 números:");
+        for (Int32 i = 0; i < 10; i++)
+        {
+            numeros[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Número para pesquisar:");
+        numeroPesquisa = Convert.ToInt32(Console.ReadLine());
+
+        for (Int32 i = 0; i < 10; i++)
+        {
+            if (numeros[i] == numeroPesquisa)
+            {
+                ocorrencias = ocorrencias + 1;
+                
+                if (posicoes == "")
+                {
+                    posicoes = i.ToString();
+                }
+                else
+                {
+                    posicoes = posicoes + ", " + i;
+                }
+            }
+        }
+
+        Console.WriteLine();
+        if (ocorrencias > 0)
+        {
+            Console.WriteLine("Número encontrado.");
+            Console.WriteLine("Quantidade de ocorrências: " + ocorrencias);
+            Console.WriteLine("Posições: " + posicoes);
+        }
+        else
+        {
+            Console.WriteLine("Número não encontrado.");
+        }
+
+        Console.ReadKey();
+    }
+}
+
+
+
+
+Web API (PesquisaController.cs)
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class PesquisaRequest
+    {
+        public Int32[] Numeros { get; set; } = new Int32[0];
+        public Int32 NumeroPesquisa { get; set; }
+    }
+
+    public class PesquisaResponse
+    {
+        public string Status { get; set; } = string.Empty;
+        public Int32 QuantidadeOcorrencias { get; set; }
+        public Int32[] Posicoes { get; set; } = new Int32[0];
+    }
+
+    [ApiController]
+    [Route("api/numeros")]
+    public class PesquisaController : ControllerBase
+    {
+        [HttpPost("pesquisar")]
+        public IActionResult PesquisarNumero([FromBody] PesquisaRequest request)
+        {
+            Int32 tamanho = request.Numeros.Length;
+            Int32 ocorrencias = 0;
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                if (request.Numeros[i] == request.NumeroPesquisa)
+                {
+                    ocorrencias = ocorrencias + 1;
+                }
+            }
+
+            Int32[] posicoesEncontradas = new Int32[ocorrencias];
+            Int32 indexPosicao = 0;
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                if (request.Numeros[i] == request.NumeroPesquisa)
+                {
+                    posicoesEncontradas[indexPosicao] = i;
+                    indexPosicao = indexPosicao + 1;
+                }
+            }
+
+            PesquisaResponse resposta = new PesquisaResponse();
+
+            if (ocorrencias > 0)
+            {
+                resposta.Status = "Número encontrado.";
+                resposta.QuantidadeOcorrencias = ocorrencias;
+                resposta.Posicoes = posicoesEncontradas;
+            }
+            else
+            {
+                resposta.Status = "Número não encontrado.";
+                resposta.QuantidadeOcorrencias = 0;
+                resposta.Posicoes = new Int32[0];
+            }
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+
+
+
+exercício 10:
+
+
+
+Console Application (Program.cs)
+
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Int32[] numeros = new Int32[10];
+        Int32 quantidadePositivos = 0;
+        Int32 quantidadeNegativos = 0;
+        Int32 quantidadeZeros = 0;
+        Int32 somaPositivos = 0;
+        Int32 somaNegativos = 0;
+
+        Console.WriteLine("Informe os 10 números:");
+        for (Int32 i = 0; i < 10; i++)
+        {
+            numeros[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        for (Int32 i = 0; i < 10; i++)
+        {
+            if (numeros[i] > 0)
+            {
+                quantidadePositivos = quantidadePositivos + 1;
+                somaPositivos = somaPositivos + numeros[i];
+            }
+            else if (numeros[i] < 0)
+            {
+                quantidadeNegativos = quantidadeNegativos + 1;
+                somaNegativos = somaNegativos + numeros[i];
+            }
+            else
+            {
+                quantidadeZeros = quantidadeZeros + 1;
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Quantidade de positivos: " + quantidadePositivos);
+        Console.WriteLine("Quantidade de negativos: " + quantidadeNegativos);
+        Console.WriteLine("Quantidade de zeros: " + quantidadeZeros);
+        Console.WriteLine("Soma dos positivos: " + somaPositivos);
+        Console.WriteLine("Soma dos negativos: " + somaNegativos);
+        Console.ReadKey();
+    }
+}
+
+
+
+
+Web API (ClassificarController.cs)
+
+
+
+
+using Microsoft.AspNetCore.Mvc;
+
+namespace ExercicioApi.Controllers
+{
+    public class ClassificarNumerosRequest
+    {
+        public Int32[] Numeros { get; set; } = new Int32[0];
+    }
+
+    public class ClassificarNumerosResponse
+    {
+        public Int32 QuantidadePositivos { get; set; }
+        public Int32 QuantidadeNegativos { get; set; }
+        public Int32 QuantidadeZeros { get; set; }
+        public Int32 SomaPositivos { get; set; }
+        public Int32 SomaNegativos { get; set; }
+    }
+
+    [ApiController]
+    [Route("api/numeros")]
+    public class ClassificarController : ControllerBase
+    {
+        [HttpPost("classificar")]
+        public IActionResult ClassificarNumeros([FromBody] ClassificarNumerosRequest request)
+        {
+            Int32 tamanho = request.Numeros.Length;
+            Int32 quantidadePositivos = 0;
+            Int32 quantidadeNegativos = 0;
+            Int32 quantidadeZeros = 0;
+            Int32 somaPositivos = 0;
+            Int32 somaNegativos = 0;
+
+            for (Int32 i = 0; i < tamanho; i++)
+            {
+                if (request.Numeros[i] > 0)
+                {
+                    quantidadePositivos = quantidadePositivos + 1;
+                    somaPositivos = somaPositivos + request.Numeros[i];
+                }
+                else if (request.Numeros[i] < 0)
+                {
+                    quantidadeNegativos = quantidadeNegativos + 1;
+                    somaNegativos = somaNegativos + request.Numeros[i];
+                }
+                else
+                {
+                    quantidadeZeros = quantidadeZeros + 1;
+                }
+            }
+
+            ClassificarNumerosResponse resposta = new ClassificarNumerosResponse();
+            resposta.QuantidadePositivos = quantidadePositivos;
+            resposta.QuantidadeNegativos = quantidadeNegativos;
+            resposta.QuantidadeZeros = quantidadeZeros;
+            resposta.SomaPositivos = somaPositivos;
+            resposta.SomaNegativos = somaNegativos;
+
+            return Ok(resposta);
+        }
+    }
+}
+
+
+
+
+

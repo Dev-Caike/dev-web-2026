@@ -1,0 +1,351 @@
+:root {
+  --asfalto: #26282c;
+  --asfalto-claro: #3a3d42;
+  --concreto: #ebe8e1;
+  --branco: #fafaf7;
+  --faixa: #f0b90b;
+  --freio: #c0351f;
+  --texto: #1f2023;
+
+  --fonte-titulo: "Archivo", "Arial Black", Impact, sans-serif;
+  --fonte-texto: "Barlow", "Segoe UI", Arial, sans-serif;
+
+  --espaco-p: 1rem;
+  --espaco-m: 1.5rem;
+  --espaco-g: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte-texto);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--texto);
+  background: var(--concreto);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.1;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--faixa);
+  outline-offset: 3px;
+}
+
+/* topo */
+
+.topo {
+  background: var(--asfalto);
+  color: var(--branco);
+  padding-top: clamp(3rem, 10vw, 7rem);
+}
+
+.topo-conteudo {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 var(--espaco-m) clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.topo h1 {
+  font-size: clamp(2.6rem, 11vw, 7.5rem);
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: 125%;
+  letter-spacing: -0.02em;
+  max-width: 12ch;
+}
+
+.subtitulo {
+  max-width: 38rem;
+  margin-top: var(--espaco-m);
+  font-size: 1.3rem;
+  color: #d4d2cc;
+}
+
+.topo nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin-top: 2.5rem;
+}
+
+.topo nav a {
+  color: var(--branco);
+  font-weight: 600;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--asfalto-claro);
+}
+
+.topo nav a:hover {
+  border-bottom-color: var(--faixa);
+}
+
+.topo-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-g);
+}
+
+.topo-texto {
+  flex: 1 1 24rem;
+}
+
+.capa {
+  flex: 0 1 17rem;
+  margin: 0 auto;
+}
+
+.capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 4px solid var(--faixa);
+}
+
+.capa figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #b9b7b0;
+}
+
+/* faixa tracejada, igual à de uma pista */
+.faixa {
+  height: 14px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--faixa) 0 60px,
+    transparent 60px 110px
+  );
+  transform-origin: left;
+  animation: entrar 0.9s ease-out;
+}
+
+@keyframes entrar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* blocos */
+
+.bloco {
+  padding: clamp(3rem, 8vw, 5.5rem) var(--espaco-m);
+}
+
+.claro {
+  background: var(--concreto);
+}
+
+.escuro {
+  background: var(--asfalto);
+  color: var(--branco);
+}
+
+.coluna {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.coluna.larga {
+  max-width: 64rem;
+}
+
+.bloco h2 {
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  font-weight: 800;
+  font-stretch: 110%;
+  margin-bottom: var(--espaco-m);
+}
+
+.bloco p + p {
+  margin-top: 1.1rem;
+}
+
+.intro {
+  max-width: 38rem;
+  margin-bottom: 2.5rem;
+}
+
+.escuro .intro {
+  color: #d4d2cc;
+}
+
+/* fases */
+
+.fases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--espaco-g);
+}
+
+.fases article {
+  padding-top: 1.25rem;
+  border-top: 6px solid var(--faixa);
+}
+
+.fases h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.anos {
+  margin: 0.35rem 0 0.9rem;
+  color: var(--faixa);
+  font-weight: 600;
+}
+
+.fases p:last-child {
+  color: #e2e0da;
+}
+
+/* linha do tempo */
+
+.linha-do-tempo {
+  list-style: none;
+  position: relative;
+  padding-left: 0;
+}
+
+/* linha tracejada vertical no centro da coluna dos anos */
+.linha-do-tempo::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 3.4rem;
+  width: 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    var(--faixa) 0 22px,
+    transparent 22px 36px
+  );
+}
+
+.linha-do-tempo li {
+  display: grid;
+  grid-template-columns: 6.8rem 1fr;
+  gap: var(--espaco-p);
+  padding-bottom: 2.25rem;
+}
+
+.linha-do-tempo li:last-child {
+  padding-bottom: 0;
+}
+
+.ano {
+  position: relative;
+  z-index: 1;
+  align-self: start;
+  justify-self: start;
+  padding: 0.15rem 0.6rem;
+  background: var(--asfalto);
+  color: var(--faixa);
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.linha-do-tempo h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.direcao {
+  margin: 0.25rem 0 0.6rem;
+  color: var(--freio);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.linha-do-tempo li p:last-child {
+  max-width: 38rem;
+}
+
+/* elenco */
+
+.elenco {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--asfalto-claro);
+}
+
+.elenco div {
+  padding: 1.25rem var(--espaco-m) 1.25rem 0;
+  border-bottom: 1px solid var(--asfalto-claro);
+}
+
+.elenco dt {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--faixa);
+}
+
+.elenco dd {
+  margin-top: 0.2rem;
+  color: #e2e0da;
+}
+
+/* rodapé */
+
+.rodape {
+  background: var(--asfalto);
+  color: #b9b7b0;
+  padding: 2.5rem var(--espaco-m);
+  border-top: 14px solid var(--faixa);
+  font-size: 1rem;
+}
+
+.rodape p + p {
+  margin-top: 0.4rem;
+}
+
+.fontes {
+  margin-top: 1rem;
+}
+
+/* telas pequenas */
+
+@media (max-width: 36rem) {
+  body {
+    font-size: 1.05rem;
+  }
+
+  .linha-do-tempo::before {
+    left: 1.25rem;
+  }
+
+  .linha-do-tempo li {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-left: 0;
+  }
+
+  .ano {
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .faixa {
+    animation: none;
+  }
+}

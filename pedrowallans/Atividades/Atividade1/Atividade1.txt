@@ -1,0 +1,42 @@
+1. Paleta de Cores (Design System)
+Definição dos tokens de cores para os modos Light e Dark:
+
+Primary, Secondary e Tertiary: Tons de azul-acinzentado e roxo/púrpura.
+
+Background e On Background: Aplicação das superfícies e cores de texto/elementos em contraste.
+
+On Surface: Nova variável adicionada para os temas Light e Dark.
+
+2. Escala Tipográfica (Typography)
+Padronização da tipografia utilizando a fonte Racing Sans One Regular:
+
+Headline: 119px / auto
+
+Title: 25px / auto (nova fonte/especificação solicitada)
+
+Subtitle: 20px / auto
+
+Body: 17px / auto
+
+Button: 15px / auto
+
+3. Componentes
+Desenvolvimento de componentes interativos e reutilizáveis:
+
+Botões: Variantes em estilos Primário, Secundário e Terciário, contemplando os estados Default, Outline, Disable e Loading.
+
+AppBar: Componentes de barra de navegação superior com variante Dark e suporte a ícones e ações (como navegação e pagamentos).
+
+4. Protótipo Navegável
+Fluxo interativo de telas da aplicação IStorm consumindo todos os tokens e componentes criados:
+
+Tela de Login (com campos de e-mail, senha e botão entrar).
+
+Telas de Perfil e Informações de Perfil.
+
+Tela de Pagamentos / Opções.
+
+Interface de Streaming com visualização de detalhes e episódios das temporadas.
+
+Link Figma:
+https://www.figma.com/design/iAUWVy7Gq8Jt7INXzhgQ4Z/Atividade-1?node-id=0-1&p=f&t=48hl8j5uQEL0tuiM-0

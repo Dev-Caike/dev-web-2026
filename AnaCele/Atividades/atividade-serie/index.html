@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pretty Little Liars</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f3eaf5;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #4b2858;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        header h1 {
+            color: #f0c6e8;
+        }
+
+        section {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #4b2858;
+            margin-bottom: 20px;
+        }
+
+        .card img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #4b2858;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Pretty Little Liars</h1>
+        <p>Segredos, mistérios e mentiras.</p>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="container">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mt-3">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Início</a>
+                </li>
+
+                <li class="breadcrumb-item active">
+                    Pretty Little Liars
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Apresentação da série -->
+        <section>
+
+            <div class="row align-items-center">
+
+                <div class="col-md-4">
+                    <img src="img/Capa.png"
+                    class="img-fluid rounded"
+                    alt="Capa de Pretty Little Liars">
+                </div>
+
+                <div class="col-md-8">
+
+                    <h2>Conheça a série</h2>
+
+                    <p>
+                        Pretty Little Liars é uma série de suspense,
+                        drama e mistério lançada em 2010.
+
+                        A história acompanha quatro amigas que começam
+                        a receber mensagens misteriosas de uma pessoa
+                        que se identifica como "A".
+                    </p>
+
+                    <p>
+                        Após o desaparecimento de Alison DiLaurentis,
+                        segredos começam a ser revelados e a vida das
+                        amigas nunca mais será a mesma.
+                    </p>
+
+                    <p><strong>Temporadas:</strong> 7</p>
+                    <p><strong>Ano de lançamento:</strong> 2010</p>
+                    <p><strong>Criadora:</strong> I. Marlene King</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Elenco principal -->
+        <section>
+
+            <h2>Personagens principais</h2>
+
+            <div class="row">
+
+                <!-- Aria -->
+                <div class="col-md-3 mb-3">
+
+                    <div class="card h-100">
+
+                        <img src="img/Aria.png"
+                        class="card-img-top"
+                        alt="Aria Montgomery">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Aria Montgomery
+                            </h5>
+
+                            <p class="card-text">
+                                Interpretada por Lucy Hale.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Spencer -->
+                <div class="col-md-3 mb-3">
+
+                    <div class="card h-100">
+
+                        <img src="img/Spencer.png"
+                        class="card-img-top"
+                        alt="Spencer Hastings">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Spencer Hastings
+                            </h5>
+
+                            <p class="card-text">
+                                Interpretada por Troian Bellisario.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Hanna -->
+                <div class="col-md-3 mb-3">
+
+                    <div class="card h-100">
+
+                        <img src="img/Hanna.png"
+                        class="card-img-top"
+                        alt="Hanna Marin">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Hanna Marin
+                            </h5>
+
+                            <p class="card-text">
+                                Interpretada por Ashley Benson.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Emily -->
+                <div class="col-md-3 mb-3">
+
+                    <div class="card h-100">
+
+                        <img src="img/Emily.png"
+                        class="card-img-top"
+                        alt="Emily Fields">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                Emily Fields
+                            </h5>
+
+                            <p class="card-text">
+                                Interpretada por Shay Mitchell.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Carrossel -->
+        <section>
+
+            <h2>Galeria de imagens</h2>
+
+            <div id="meuCarrossel" class="carousel slide"
+            data-bs-ride="carousel">
+
+                <div class="carousel-inner">
+
+                    <!-- Primeira imagem -->
+                    <div class="carousel-item active">
+
+                        <img src="img/PLL.png"
+                        class="d-block w-100"
+                        alt="Imagem da série"
+                        style="height: 400px; object-fit: cover;">
+
+                    </div>
+
+                    <!-- Segunda imagem -->
+                    <div class="carousel-item">
+
+                        <img src="imagens/serie2.jpg"
+                        class="d-block w-100"
+                        alt="Imagem das personagens"
+                        style="height: 400px; object-fit: cover;">
+
+                    </div>
+
+                </div>
+
+                <!-- Botão anterior -->
+                <button class="carousel-control-prev"
+                type="button"
+                data-bs-target="#meuCarrossel"
+                data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"></span>
+
+                </button>
+
+                <!-- Botão próximo -->
+                <button class="carousel-control-next"
+                type="button"
+                data-bs-target="#meuCarrossel"
+                data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"></span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+
+        <p>Pretty Little Liars - Página desenvolvida com HTML e Bootstrap.</p>
+
+        <p>Atividade de Desenvolvimento de Interface.</p>
+
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stranger Things — Página da Série</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous"
+  >
+</head>
+<body class="bg-dark text-light">
+
+  <!-- Cabeçalho Semântico com Navegação -->
+  <header id="topo" class="border-bottom border-danger bg-black">
+    <nav class="navbar navbar-expand-lg navbar-dark container py-3" aria-label="Navegação principal">
+      <a class="navbar-brand fw-bold text-danger fs-3 text-uppercase" href="#topo">
+        Stranger Things
+      </a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#menuPrincipal" 
+        aria-controls="menuPrincipal" 
+        aria-expanded="false" 
+        aria-label="Alternar navegação"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item">
+            <a class="nav-link active" href="#destaques">Destaques</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sinopse">Sinopse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#elenco">Elenco Principal</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="container my-4">
+
+    <!-- Componente 1: Breadcrumb (Navegação de contexto no topo da página) -->
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb bg-body-tertiary px-3 py-2 rounded border border-secondary-subtle">
+        <li class="breadcrumb-item"><a href="#topo" class="text-danger text-decoration-none">Início</a></li>
+        <li class="breadcrumb-item"><a href="#sinopse" class="text-danger text-decoration-none">Séries</a></li>
+        <li class="breadcrumb-item"><a href="#sinopse" class="text-danger text-decoration-none">Ficção Científica &amp; Terror</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Stranger Things</li>
+      </ol>
+    </nav>
+
+    <!-- Componente 2: Carousel (Carrossel com slides e destaques da série) -->
+    <section id="destaques" class="mb-5" aria-label="Destaques da série">
+      <div id="carouselStrangerThings" class="carousel slide shadow-lg rounded overflow-hidden border border-danger" data-bs-ride="carousel">
+        
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselStrangerThings" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselStrangerThings" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselStrangerThings" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='450' viewBox='0 0 1200 450'><defs><linearGradient id='g1' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%231a0505'/><stop offset='50%25' stop-color='%23450a0a'/><stop offset='100%25' stop-color='%23090d16'/></linearGradient></defs><rect width='1200' height='450' fill='url(%23g1)'/><circle cx='600' cy='210' r='160' fill='none' stroke='%23dc2626' stroke-width='3' opacity='0.45'/><text x='50%25' y='44%25' dominant-baseline='middle' text-anchor='middle' fill='%23ef4444' font-family='Georgia, serif' font-size='56' font-weight='bold' letter-spacing='6'>STRANGER THINGS</text><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' fill='%23e2e8f0' font-family='Arial, sans-serif' font-size='22' letter-spacing='3'>HAWKINS, INDIANA • 1983</text></svg>" 
+              class="d-block w-100" 
+              alt="Banner temático de Stranger Things em Hawkins, Indiana"
+            >
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h2 class="h4 text-danger fw-bold">Bem-vindo a Hawkins, Indiana</h2>
+              <p class="mb-0">Quando um garoto desaparece, uma pequena cidade descobre experimentos secretos e forças sobrenaturais.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='450' viewBox='0 0 1200 450'><defs><linearGradient id='g2' x1='0' y1='1' x2='1' y2='0'><stop offset='0%25' stop-color='%23090d16'/><stop offset='50%25' stop-color='%231e1b4b'/><stop offset='100%25' stop-color='%237f1d1d'/></linearGradient></defs><rect width='1200' height='450' fill='url(%23g2)'/><text x='50%25' y='44%25' dominant-baseline='middle' text-anchor='middle' fill='%23f87171' font-family='Georgia, serif' font-size='48' font-weight='bold' letter-spacing='4'>O MUNDO INVERTIDO</text><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' fill='%23cbd5e1' font-family='Arial, sans-serif' font-size='22' letter-spacing='2'>UMA DIMENSÃO SOMBRIA ESPELHADA</text></svg>" 
+              class="d-block w-100" 
+              alt="Banner representando a dimensão paralela do Mundo Invertido"
+            >
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h2 class="h4 text-danger fw-bold">Os Segredos do Mundo Invertido</h2>
+              <p class="mb-0">Um portal aberto no Laboratório Nacional de Hawkins ameaça toda a realidade com criaturas sombrias.</p>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='450' viewBox='0 0 1200 450'><defs><linearGradient id='g3' x1='0' y1='0' x2='1' y2='0'><stop offset='0%25' stop-color='%232b0909'/><stop offset='50%25' stop-color='%230f172a'/><stop offset='100%25' stop-color='%23450a0a'/></linearGradient></defs><rect width='1200' height='450' fill='url(%23g3)'/><text x='50%25' y='44%25' dominant-baseline='middle' text-anchor='middle' fill='%23ef4444' font-family='Georgia, serif' font-size='48' font-weight='bold' letter-spacing='4'>AMIZADE E CORAGEM</text><text x='50%25' y='58%25' dominant-baseline='middle' text-anchor='middle' fill='%23e2e8f0' font-family='Arial, sans-serif' font-size='22' letter-spacing='2'>ONZE E O GRUPO CONTRA AS TREVAS</text></svg>" 
+              class="d-block w-100" 
+              alt="Banner representando Onze e o grupo de amigos de Hawkins"
+            >
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded p-3">
+              <h2 class="h4 text-danger fw-bold">Unidos Contra o Mal</h2>
+              <p class="mb-0">Com poderes telecinéticos e laços inquebráveis, Onze e seus amigos enfrentam o Demogorgon, o Devorador de Mentes e Vecna.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Controles Anterior / Próximo -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselStrangerThings" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselStrangerThings" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Seção de Sinopse e Informações Gerais -->
+    <section id="sinopse" class="mb-5">
+      <div class="row g-4 align-items-stretch">
+        <article class="col-12 col-lg-8">
+          <div class="p-4 bg-body-tertiary rounded border border-secondary-subtle h-100">
+            <span class="badge bg-danger mb-2">Série Original Netflix • 2016–2025</span>
+            <h1 class="display-6 fw-bold mb-3">Stranger Things</h1>
+            <h2 class="h5 text-danger mb-3">Sinopse</h2>
+            <p>
+              Ambientada na década de 1980 na fictícia cidade de <strong>Hawkins, Indiana</strong>, a história começa 
+              em novembro de 1983 com o misterioso desaparecimento do jovem <strong>Will Byers</strong>. Enquanto sua mãe, 
+              Joyce, e o chefe de polícia Jim Hopper iniciam uma busca desesperada, os melhores amigos de Will — 
+              Mike, Dustin e Lucas — encontram uma garota fugitiva com habilidades telecinéticas chamada <strong>Onze (Eleven)</strong>.
+            </p>
+            <p class="mb-0">
+              Juntos, eles descobrem que o desaparecimento está ligado a experimentos governamentais secretos e à abertura 
+              de um portal para uma dimensão paralela hostil conhecida como <strong>Mundo Invertido</strong>.
+            </p>
+          </div>
+        </article>
+
+        <article class="col-12 col-lg-4">
+          <div class="p-4 bg-body-tertiary rounded border border-secondary-subtle h-100">
+            <h2 class="h5 text-danger border-bottom border-secondary pb-2 mb-3">Ficha da Série</h2>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent px-0">
+                <strong>Criadores:</strong> Irmãos Duffer (Matt e Ross Duffer)
+              </li>
+              <li class="list-group-item bg-transparent px-0">
+                <strong>Gênero:</strong> Ficção científica, Terror, Drama
+              </li>
+              <li class="list-group-item bg-transparent px-0">
+                <strong>Estreia:</strong> 15 de julho de 2016
+              </li>
+              <li class="list-group-item bg-transparent px-0">
+                <strong>Temporadas:</strong> 5 temporadas
+              </li>
+              <li class="list-group-item bg-transparent px-0 border-bottom-0">
+                <strong>Ambientação:</strong> Hawkins, Indiana (Anos 80)
+              </li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Componente 3: Cards (Elenco Principal e Personagens) -->
+    <section id="elenco" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 fw-bold border-start border-4 border-danger ps-3 mb-0">Elenco Principal</h2>
+        <span class="badge text-bg-danger">Personagens Icônicos</span>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        
+        <!-- Card 1 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%232b0909'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%23ef4444' font-family='Georgia, serif' font-size='44' font-weight='bold'>011</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>ONZE / JANE HOPPER</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática da personagem Onze (011)"
+            >
+            <div class="card-body">
+              <span class="badge bg-danger mb-2">Protagonista</span>
+              <h3 class="card-title h5">Millie Bobby Brown</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Onze (Eleven)</h4>
+              <p class="card-text">
+                Jovem com extraordinários poderes psicocinéticos e telepáticos criada no Laboratório de Hawkins, peça central na luta contra o Mundo Invertido.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%23172033'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%2338bdf8' font-family='Georgia, serif' font-size='36' font-weight='bold'>PALADINO</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>MIKE WHEELER</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática do personagem Mike Wheeler"
+            >
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">Grupo de Hawkins</span>
+              <h3 class="card-title h5">Finn Wolfhard</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Mike Wheeler</h4>
+              <p class="card-text">
+                Líder leal do grupo de amigos, melhor amigo de Will e o primeiro a acolher e proteger Onze quando ela foge do laboratório.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%231f1635'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%23c084fc' font-family='Georgia, serif' font-size='36' font-weight='bold'>BARDO</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>DUSTIN HENDERSON</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática do personagem Dustin Henderson"
+            >
+            <div class="card-body">
+              <span class="badge bg-secondary mb-2">Grupo de Hawkins</span>
+              <h3 class="card-title h5">Gaten Matarazzo</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Dustin Henderson</h4>
+              <p class="card-text">
+                O estrategista criativo e apaixonado por ciência e rádio amador, responsável por desvendar várias pistas sobre as criaturas de Hawkins.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%23291d12'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%23fbbf24' font-family='Georgia, serif' font-size='34' font-weight='bold'>HAWKINS PD</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>JIM HOPPER</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática do delegado Jim Hopper"
+            >
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">Delegado</span>
+              <h3 class="card-title h5">David Harbour</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Jim Hopper</h4>
+              <p class="card-text">
+                Chefe de polícia de Hawkins que investiga os mistérios do laboratório e se torna figura paterna adotiva de Onze.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%232c1018'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%23fb7185' font-family='Georgia, serif' font-size='34' font-weight='bold'>LUZES DE NATAL</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>JOYCE BYERS</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática da personagem Joyce Byers"
+            >
+            <div class="card-body">
+              <span class="badge bg-danger mb-2">Família Byers</span>
+              <h3 class="card-title h5">Winona Ryder</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Joyce Byers</h4>
+              <p class="card-text">
+                Mãe determinada de Will e Jonathan que nunca desiste de resgatar seu filho, comunicando-se com ele através de luzes de Natal.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="col">
+          <div class="card h-100 bg-body-tertiary border-secondary shadow-sm">
+            <img 
+              src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='260' viewBox='0 0 600 260'><rect width='600' height='260' fill='%230f292e'/><text x='50%25' y='48%25' dominant-baseline='middle' text-anchor='middle' fill='%232dd4bf' font-family='Georgia, serif' font-size='34' font-weight='bold'>ZOOMER</text><text x='50%25' y='68%25' dominant-baseline='middle' text-anchor='middle' fill='%23f8fafc' font-family='Arial, sans-serif' font-size='20'>MAX MAYFIELD</text></svg>" 
+              class="card-img-top" 
+              alt="Ilustração temática da personagem Max Mayfield"
+            >
+            <div class="card-body">
+              <span class="badge bg-info text-dark mb-2">Grupo de Hawkins</span>
+              <h3 class="card-title h5">Sadie Sink</h3>
+              <h4 class="card-subtitle mb-2 text-body-secondary h6">Max Mayfield</h4>
+              <p class="card-text">
+                Skatista corajosa recém-chegada da Califórnia que entra para o grupo e enfrenta diretamente a maldição de Vecna na 4ª temporada.
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Semântico -->
+  <footer class="bg-black border-top border-danger py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-secondary small">
+      <p class="mb-0">
+        Página temática: <strong class="text-light">Stranger Things</strong> — 3ª Avaliação de Desenvolvimento de Interfaces (HTML &amp; Bootstrap).
+      </p>
+      <a href="#topo" class="text-danger text-decoration-none fw-semibold">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle via CDN (necessário para funcionamento do Carousel e Navbar) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

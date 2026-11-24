@@ -1,0 +1,194 @@
+:root {
+    --primary-color: #2b4c7e;
+    --secondary-color: #e0a96d;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-light: #666666;
+    
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color); /* Fica como cor de reserva enquanto a imagem carrega */
+    color: var(--text-color);
+    line-height: 1.6;
+
+    /* Propriedades da Imagem de Fundo */
+    background-image: url('https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'); /* Subsitua pelo link ou caminho da imagem */
+    background-size: cover;       /* Faz a imagem cobrir toda a tela */
+    background-position: center;  /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem fique se repetindo */
+    background-attachment: fixed; /* Opcional: deixa o fundo fixo ao rolar a página */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-md) 0;
+    box-shadow: var(--box-shadow);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-md);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+.hero-section {
+    display: flex;
+    gap: var(--spacing-lg);
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    align-items: center;
+}
+
+.poster-container {
+    flex: 1;
+    max-width: 280px;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    display: block;
+}
+
+.hero-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.hero-content h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.badges {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.badges span {
+    background-color: var(--bg-color);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.content-section {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.content-section h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--bg-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+.content-section article p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.details-grid, .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.detail-card, .cast-card {
+    background-color: var(--bg-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.detail-card h3, .cast-card h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .poster-container {
+        max-width: 200px;
+    }
+
+    .badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}

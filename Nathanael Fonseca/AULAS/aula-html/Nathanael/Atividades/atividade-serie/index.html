@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stranger Things - Página de Série</title>
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Header com Navegação e Breadcrumb -->
+    <header class="bg-dark text-white p-3 mb-4">
+        <div class="container">
+            <h1 class="h3">Portal de Séries</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#" class="text-white-50">Início</a></li>
+                    <li class="breadcrumb-item"><a href="#" class="text-white-50">Séries</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Stranger Things</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mb-5">
+
+        <!-- Secção do Carrossel -->
+        <section class="mb-5">
+            <div id="carouselSerie" class="carousel slide rounded overflow-hidden shadow-sm" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&h=400&q=80" class="d-block w-100" alt="Destaque 1 - O Mundo Invertido">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>O Mundo Invertido</h5>
+                            <p>Uma dimensão alternativa cheia de mistérios e perigos.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&h=400&q=80" class="d-block w-100" alt="Destaque 2 - Anos 80">
+                        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+                            <h5>Nostalgia dos Anos 80</h5>
+                            <p>Uma viagem no tempo com banda sonora marcante.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSerie" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselSerie" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Secção da Sinopse -->
+        <section class="mb-5">
+            <article class="bg-white p-4 rounded shadow-sm">
+                <h2 class="h3 border-bottom pb-2">Sinopse</h2>
+                <p class="lead">
+                    Quando um jovem rapaz desaparece misteriosamente numa pequena cidade, os seus amigos, a família e a polícia local são arrastados para um mistério extraordinário que envolve experiências secretas do governo, forças sobrenaturais aterradoras e uma rapariga muito estranha.
+                </p>
+            </article>
+        </section>
+
+        <!-- Secção do Elenco (Cards) -->
+        <section class="mb-5">
+            <h2 class="h3 mb-4">Elenco Principal</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                
+                <div class="col">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&h=300&q=80" class="card-img-top" alt="Eleven">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Eleven (Onze)</h3>
+                            <p class="card-text">Uma rapariga com habilidades telecinéticas que ajuda os rapazes a procurar o amigo desaparecido.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=300&q=80" class="card-img-top" alt="Mike Wheeler">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Mike Wheeler</h3>
+                            <p class="card-text">Um rapaz inteligente e determinado que lidera o grupo na busca pelo seu melhor amigo Will.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&h=300&q=80" class="card-img-top" alt="Jim Hopper">
+                        <div class="card-body">
+                            <h3 class="card-title h5">Jim Hopper</h3>
+                            <p class="card-text">O chefe de polícia da cidade de Hawkins, com um passado conturbado mas dedicado a investigar o caso.</p>
+                        </div>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 - Trabalho de Avaliação HTML & Bootstrap</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

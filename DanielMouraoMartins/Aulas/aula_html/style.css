@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F5F0E8;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #A83232;
+    color: #FFF9F0;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Menu de navegação */
+nav {
+    background-color: #FDFBF7;
+    padding: 20px;
+    text-align: center;
+}
+
+nav h2 {
+    color: #A83232;
+    margin-bottom: 15px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #A83232;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #6F1D1B;
+    text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+    display: flex;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Seção principal */
+section {
+    flex: 3;
+    background-color: #FDFBF7;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #A83232;
+    margin-bottom: 20px;
+}
+
+/* Artigos */
+article {
+    margin-bottom: 30px;
+}
+
+article h3 {
+    color: #8F2929;
+    margin-bottom: 12px;
+}
+
+article p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+article img {
+    display: block;
+    width: 250px;
+    max-width: 100%;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Links dos artigos */
+article a {
+    color: #A83232;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Barra lateral */
+aside {
+    flex: 1;
+    background-color: #EFE5D8;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+aside h2,
+aside h3 {
+    color: #A83232;
+    margin-bottom: 12px;
+}
+
+aside p {
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #6F1D1B;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    background-color: #A83232;
+    color: #FFF9F0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+}

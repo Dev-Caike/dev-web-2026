@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página acadêmica sobre a série Stranger Things: história, personagens e galeria em HTML5 e Bootstrap.">
+  <meta name="theme-color" content="#0a0d17">
+  <title>Stranger Things | Arquivos de Hawkins</title>
+  <!-- Bootstrap 5.3.9 via CDN: exigência da atividade -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-yEPZ7jP9S0QKiUQ0m3jjsO4ProIW7wvR9gXkI7JOGa2XVsw53Yke2bsdkBbjmmiX" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body id="inicio">
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Navegação principal">
+    <div class="container-xl">
+      <a class="navbar-brand brand d-flex align-items-center gap-2" href="#inicio" aria-label="Arquivos de Hawkins, início"><span class="brand-mark" aria-hidden="true">H.</span><span>ARQUIVOS <strong>DE HAWKINS</strong></span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#historia">A história</a></li>
+          <li class="nav-item"><a class="nav-link" href="#personagens">Personagens</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ficha">Ficha da série</a></li>
+          <li class="nav-item"><a class="btn btn-outline-danger btn-sm nav-cta ms-lg-2" href="#galeria">Explorar Hawkins <span aria-hidden="true">↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main id="conteudo">
+  <div class="container-xl breadcrumb-wrap">
+    <nav aria-label="Você está aqui" class="breadcrumb-nav">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="#inicio">Início</a></li>
+        <li class="breadcrumb-item"><a href="#historia">Séries</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Stranger Things</li>
+      </ol>
+    </nav>
+  </div>
+  <section class="hero-section" aria-labelledby="titulo-serie">
+    <div class="container-xl">
+      <div class="hero-panel row align-items-center gy-4">
+        <div class="col-lg-7 position-relative z-1 hero-content">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> CASO 011 / HAWKINS, INDIANA</p>
+          <h1 id="titulo-serie" class="display-title">STRANGER <span>THINGS</span></h1>
+          <p class="hero-lead">O desconhecido está mais perto do que você imagina.</p>
+          <p class="hero-desc">Um desaparecimento misterioso. Experimentos secretos. Um grupo de amigos disposto a atravessar qualquer limite para descobrir a verdade.</p>
+          <div class="d-flex flex-wrap gap-2 my-4" aria-label="Características da série">
+            <span class="meta-pill">Ficção científica</span><span class="meta-pill">Mistério</span><span class="meta-pill">Anos 80</span><span class="meta-pill">5 temporadas</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3 align-items-center"><a href="#historia" class="btn btn-danger btn-lg hero-button">Descobrir a história <span aria-hidden="true">↗</span></a><span class="hero-caption">UMA SÉRIE ORIGINAL DA NETFLIX</span></div>
+        </div>
+        <div class="col-lg-5 hero-visual" aria-hidden="true">
+          <div class="poster-frame"><img src="imagens/hawkins-noite.jpg" alt="" class="img-fluid hero-poster"><span class="poster-stamp">CONFIDENCIAL <span class="stamp-circle">011</span></span></div>
+        </div>
+      </div>
+      <div class="hero-footer d-flex flex-wrap justify-content-between align-items-center gap-2"><span>APRESENTAÇÃO ACADÊMICA • HTML + BOOTSTRAP</span><span>ROLE PARA DESCOBRIR ↓</span></div>
+    </div>
+  </section>
+  <section id="historia" class="section-space story-section" aria-labelledby="titulo-historia">
+    <div class="container-xl">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5"><p class="eyebrow">01 / O COMEÇO DE TUDO</p><h2 id="titulo-historia" class="section-title">Bem-vindo a <em>Hawkins.</em></h2><div class="accent-line"></div><p class="section-subline">Uma cidade pequena. Um mistério impossível de ignorar.</p></div>
+        <div class="col-lg-7 body-copy"><p>Ambientada principalmente na cidade fictícia de Hawkins, nos Estados Unidos, <strong>Stranger Things</strong> acompanha um grupo de amigos cuja rotina muda quando o jovem Will Byers desaparece sem explicação.</p><p>Enquanto a família e a polícia iniciam as buscas, os amigos conhecem Onze, uma garota com habilidades especiais. Aos poucos, descobrem que estranhos experimentos e uma dimensão paralela, conhecida como <strong>Mundo Invertido</strong>, estão conectados ao desaparecimento.</p><div class="quote-box"><span class="quote-icon" aria-hidden="true">“</span><p>Amizade, coragem e família se tornam essenciais quando o impossível invade o cotidiano.</p></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="personagens" class="section-space character-section" aria-labelledby="titulo-personagens">
+    <div class="container-xl">
+      <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 section-heading"><div><p class="eyebrow">02 / ARQUIVO DE PERSONAGENS</p><h2 id="titulo-personagens" class="section-title">Quem enfrenta <em>o mistério?</em></h2></div><p class="section-side-note">Conheça alguns dos nomes centrais da história.</p></div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4"><article class="card character-card h-100"><div class="character-media"><img src="imagens/personagem-onze.jpg" class="card-img-top" alt="Arte ilustrativa de uma figura com poderes diante de uma floresta sombria"><span class="character-number">01 / EXPERIMENTO</span></div><div class="card-body d-flex flex-column"><span class="role-label">A garota extraordinária</span><h3 class="card-title">Onze <span>(Eleven)</span></h3><p class="card-text">Interpretada por <strong>Millie Bobby Brown</strong>. Uma jovem com poderes telecinéticos que encontra amizade e acolhimento no grupo de Hawkins.</p><div class="card-foot mt-auto">PODERES <span aria-hidden="true">↗</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4"><article class="card character-card h-100"><div class="character-media"><img src="imagens/personagem-dustin.jpg" class="card-img-top" alt="Arte de um rádio comunicador em um ambiente noturno de Hawkins"><span class="character-number">02 / O GRUPO</span></div><div class="card-body d-flex flex-column"><span class="role-label">O amigo inventivo</span><h3 class="card-title">Dustin <span>Henderson</span></h3><p class="card-text">Interpretado por <strong>Gaten Matarazzo</strong>. Curioso e criativo, usa o humor, a ciência e a lealdade para ajudar seus amigos.</p><div class="card-foot mt-auto">INVENTIVIDADE <span aria-hidden="true">↗</span></div></div></article></div>
+        <div class="col-md-6 col-lg-4"><article class="card character-card h-100"><div class="character-media"><img src="imagens/personagem-joyce.jpg" class="card-img-top" alt="Arte de luzes coloridas e sinais misteriosos em uma casa"><span class="character-number">03 / A FAMÍLIA</span></div><div class="card-body d-flex flex-column"><span class="role-label">A mãe determinada</span><h3 class="card-title">Joyce <span>Byers</span></h3><p class="card-text">Interpretada por <strong>Winona Ryder</strong>. Não desiste de encontrar seu filho Will e enfrenta o inexplicável para proteger a família.</p><div class="card-foot mt-auto">CORAGEM <span aria-hidden="true">↗</span></div></div></article></div>
+      </div>
+      <p class="cast-note mt-4 mb-0"><span class="text-danger me-2">✦</span> Também fazem parte do elenco principal: Finn Wolfhard, Caleb McLaughlin, Noah Schnapp e David Harbour.</p>
+    </div>
+  </section>
+  <section id="galeria" class="section-space gallery-section" aria-labelledby="titulo-galeria">
+    <div class="container-xl"><div class="d-flex flex-wrap align-items-end justify-content-between gap-3 section-heading"><div><p class="eyebrow">03 / EVIDÊNCIAS VISUAIS</p><h2 id="titulo-galeria" class="section-title">O outro lado <em>de Hawkins.</em></h2></div><p class="section-side-note">Três imagens. Um mesmo mistério.</p></div>
+      <!-- Componente Carousel oficial do Bootstrap, com indicadores, controles e três slides -->
+      <div id="carrosselHawkins" class="carousel slide hawkins-carousel" data-bs-ride="carousel" data-bs-interval="5500" aria-label="Galeria de Stranger Things">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carrosselHawkins" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Mostrar imagem 1: Estrada de Hawkins"></button>
+          <button type="button" data-bs-target="#carrosselHawkins" data-bs-slide-to="1" aria-label="Mostrar imagem 2: Mundo Invertido"></button>
+          <button type="button" data-bs-target="#carrosselHawkins" data-bs-slide-to="2" aria-label="Mostrar imagem 3: Sinais misteriosos"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active"><img src="imagens/hawkins-noite.jpg" class="d-block w-100" alt="Ilustração de jovens em bicicletas percorrendo uma estrada sombria cercada por árvores"><div class="carousel-caption"><span class="slide-index">EVIDÊNCIA 01 / 03</span><h3>O desaparecimento</h3><p>A cidade de Hawkins guarda muito mais do que aparenta.</p></div></div>
+          <div class="carousel-item"><img src="imagens/mundo-invertido.jpg" class="d-block w-100" alt="Ilustração de uma passagem sobrenatural vermelha brilhando em uma floresta"><div class="carousel-caption"><span class="slide-index">EVIDÊNCIA 02 / 03</span><h3>O Mundo Invertido</h3><p>Uma dimensão paralela muda tudo o que parecia real.</p></div></div>
+          <div class="carousel-item"><img src="imagens/sinais-de-hawkins.jpg" class="d-block w-100" alt="Ilustração de uma torre de transmissão e sinais vermelhos na noite"><div class="carousel-caption"><span class="slide-index">EVIDÊNCIA 03 / 03</span><h3>Os sinais</h3><p>A investigação revela mensagens e fenômenos inexplicáveis.</p></div></div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carrosselHawkins" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Imagem anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carrosselHawkins" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Próxima imagem</span></button>
+      </div>
+      <p class="image-credit mt-3 mb-0">As imagens desta página são ilustrações originais criadas para fins acadêmicos; não são fotografias oficiais da série.</p>
+    </div>
+  </section>
+  <section id="ficha" class="section-space info-section" aria-labelledby="titulo-ficha"><div class="container-xl"><div class="row align-items-center g-4"><div class="col-lg-5"><p class="eyebrow">04 / INFORMAÇÕES DE PRODUÇÃO</p><h2 id="titulo-ficha" class="section-title">A ficha <em>da série.</em></h2><p class="section-subline">Uma história criada pelos irmãos Duffer, conhecida por misturar aventura, ficção científica e suspense.</p></div><div class="col-lg-7"><dl class="row info-grid mb-0"><div class="col-sm-6 info-item"><dt>Criação</dt><dd>Matt e Ross Duffer</dd></div><div class="col-sm-6 info-item"><dt>Estreia original</dt><dd>2016</dd></div><div class="col-sm-6 info-item"><dt>Temporadas</dt><dd>5</dd></div><div class="col-sm-6 info-item"><dt>Gênero</dt><dd>Ficção científica e suspense</dd></div><div class="col-sm-6 info-item"><dt>Plataforma</dt><dd>Netflix</dd></div><div class="col-sm-6 info-item"><dt>Ambientação</dt><dd>Hawkins, Indiana (ficcional)</dd></div></dl></div></div></div></section>
+</main>
+<footer class="site-footer"><div class="container-xl"><div class="row gy-3 align-items-center"><div class="col-md-7"><div class="footer-brand">H. <span>ARQUIVOS DE HAWKINS</span></div><p class="mb-0 small">Projeto acadêmico de Desenvolvimento de Interfaces • HTML5 + Bootstrap.</p></div><div class="col-md-5 text-md-end"><a href="#inicio" class="back-top">Voltar ao início ↑</a><p class="small mb-0 mt-2">Site não oficial, desenvolvido para fins educacionais.</p></div></div></div></footer>
+<!-- Bundle do Bootstrap 5.3.9 via CDN: ativa o menu móvel e o Carousel -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.9/dist/js/bootstrap.bundle.min.js" integrity="sha384-WyOxWvTyr1QaMPfiPJSv76iReVthorl5uWlFtZPyK0IEB0hGzo9y5Bp9mYanr8Bu" crossorigin="anonymous"></script>
+</body>
+</html>

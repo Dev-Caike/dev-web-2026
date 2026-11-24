@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velozes e Furiosos 2 (2 Fast 2 Furious) — Página do Filme</title>
+  <!-- Bootstrap 5 CSS via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons via CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Arquivo CSS Separado Obrigatório -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho Semântico e Navegação -->
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <span class="badge badge-miami px-2 py-1">2F2F</span>
+          <span>Velozes &amp; Furiosos 2</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFilme" aria-controls="navbarFilme" aria-expanded="false" aria-label="Alternar navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarFilme">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link active" href="#destaques">Destaques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sinopse">Sinopse</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#elenco">Elenco Principal</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-info btn-sm ms-lg-2" data-bs-toggle="modal" data-bs-target="#checklistModal">
+                <i class="bi bi-github me-1"></i> Entrega &amp; Checklist
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Conteúdo Principal Semântico -->
+  <main class="container my-4">
+
+    <!-- Componente Breadcrumb -->
+    <nav aria-label="breadcrumb" class="bg-white p-3 rounded-3 shadow-sm mb-4">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-info-emphasis fw-semibold">Início</a></li>
+        <li class="breadcrumb-item"><a href="#sinopse" class="text-decoration-none text-secondary">Ação &amp; Corridas</a></li>
+        <li class="breadcrumb-item active fw-bold" aria-current="page">2 Fast 2 Furious (2003)</li>
+      </ol>
+    </nav>
+
+    <!-- Seção Carousel de Destaques -->
+    <section id="destaques" class="mb-5">
+      <div id="carouselFilme" class="carousel slide rounded-4 overflow-hidden shadow" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselFilme" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselFilme" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselFilme" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" alt="Carro esportivo tunado em pista noturna">
+            <div class="carousel-caption">
+              <span class="badge badge-miami mb-2">Dirigido por John Singleton • 2003</span>
+              <h1 class="display-5 fw-bold text-white">Velozes e Furiosos 2</h1>
+              <p class="lead text-light">Adrenalina pura, carros tunados com neon e corridas clandestinas pelas ruas ensolaradas de Miami.</p>
+              <a href="#elenco" class="btn btn-info fw-semibold px-4 text-dark">Conhecer o Elenco</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" alt="Vista noturna da cidade de Miami">
+            <div class="carousel-caption">
+              <span class="badge bg-warning text-dark mb-2">Cenário Icônico</span>
+              <h2 class="display-6 fw-bold text-white">Cultura de Rua em Miami</h2>
+              <p class="lead text-light">De pontes levadiças a garagens clandestinas, o filme definiu a estética tuning dos anos 2000.</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1400&q=80" class="d-block w-100" alt="Motor e painel esportivo em alta velocidade">
+            <div class="carousel-caption">
+              <span class="badge bg-light text-dark mb-2">Dupla Imbatível</span>
+              <h2 class="display-6 fw-bold text-white">Brian &amp; Roman</h2>
+              <p class="lead text-light">Uma parceria explosiva para derrubar o cartel de Carter Verone e limpar a ficha criminal.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselFilme" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselFilme" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Seção de Sinopse, Capa e Ficha Técnica -->
+    <section id="sinopse" class="mb-5">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-8">
+          <article class="bg-white p-4 rounded-4 shadow-sm h-100 d-flex flex-column flex-md-row gap-4 align-items-start">
+            <!-- Imagem de Capa (Use o caminho da sua imagem local aqui) -->
+            <figure class="capa-filme mb-0 mx-auto mx-md-0">
+              <img src="capa.jpg" alt="Pôster oficial do filme Velozes e Furiosos 2" class="rounded-3 shadow-sm">
+              <figcaption class="text-center text-muted small mt-2">Pôster Oficial (2003)</figcaption>
+            </figure>
+
+            <div>
+              <h2 class="h3 fw-bold section-title mb-3">Sinopse &amp; Legado</h2>
+              <p class="text-secondary fs-5">
+                Após deixar a polícia de Los Angeles, o ex-oficial <strong>Brian O'Conner</strong> (Paul Walker) vive das corridas de rua em Miami até ser capturado pelos agentes federais.
+              </p>
+              <p class="text-secondary">
+                Para limpar sua ficha criminal, ele precisa se infiltrar no cartel do perigoso lavador de dinheiro <strong>Carter Verone</strong>. Para a missão, Brian convoca seu amigo de infância <strong>Roman Pearce</strong> (Tyrese Gibson) e conta com o apoio da agente disfarçada <strong>Monica Fuentes</strong> (Eva Mendes).
+              </p>
+              <div class="alert alert-info mb-0 py-2 px-3 small">
+                <strong>O que torna marcante:</strong> A estreia de personagens pilares da franquia (Roman e Tej), o lendário Nissan Skyline GT-R R34 prateado e a trilha sonora eletrizante.
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Ficha Técnica Lateral -->
+        <div class="col-lg-4">
+          <aside class="aside-ficha text-white p-4 rounded-4 shadow-sm h-100">
+            <h3 class="h5 fw-bold text-uppercase text-info mb-3">
+              <i class="bi bi-film me-2"></i>Ficha Técnica
+            </h3>
+            <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+              <li class="border-bottom border-secondary pb-2"><strong>Título Original:</strong> 2 Fast 2 Furious</li>
+              <li class="border-bottom border-secondary pb-2"><strong>Direção:</strong> John Singleton</li>
+              <li class="border-bottom border-secondary pb-2"><strong>Lançamento:</strong> 6 de junho de 2003</li>
+              <li class="border-bottom border-secondary pb-2"><strong>Duração:</strong> 1

@@ -1,0 +1,133 @@
+a)
+select Pnome, Unome
+from funcionario;
+   TT Pnome, Unome(funcionario)
+func <- (funcionario)
+proj <- TT Pnome, Unome (func)
+
+b)
+select Pnome, Unome
+from funcionario
+where Sexo = 'F';
+   TT Pnome, Unome(~Sexo='F'(funcionario))
+func <- (funcionario)
+res <- ~Sexo='F'(func)
+proj <- TT Pnome, Unome (res)
+
+c)
+select timestampdiff(YEAR, Datanasc, CURDATE()) as "idade"
+from funcionario
+where Pnome like 'A%' AND Pnome like '%N';
+   TT timestampdiff(YEAR, Datanasc, CURDATE()) as "idade"(~Pnome like 'A%' AND Pnome like '%N'(funcionario))
+func <- (funcionario)
+res <- ~Pnome like 'A%' AND Pnome like '%N'(func)
+proj <- TT timestampdiff(YEAR, Datanasc, CURDATE()) as "idade" (res)
+
+d)
+select max(Salario)
+from funcionario join departamento on(Dnr = Dnumero)
+where Dnome = 'Pesquisa';
+   TT max(Salario)(~Dnome='Pesquisa'(funcionario |x|~Dnr=Dnumero departamento))
+junc <- (funcionario |x|~Dnr=Dnumero departamento)
+res <- ~Dnome='Pesquisa'(junc)
+proj <- TT max(Salario) (res)
+
+e)
+select min(Salario)
+from funcionario 
+join trabalha_em on(Cpf = Fcpf)
+join projeto on(Pnr = Projnumero)
+where Projlocal = 'São Paulo';
+   TT min(Salario)(~Projlocal='São Paulo'(funcionario |x|~Cpf=Fcpf trabalha_em |x|~Pnr=Projnumero projeto))
+junc1 <- (funcionario |x|~Cpf=Fcpf trabalha_em)
+junc2 <- (junc1 |x|~Pnr=Projnumero projeto)
+res <- ~Projlocal='São Paulo'(junc2)
+proj <- TT min(Salario) (res)
+
+f)
+select Nome_dependente
+from dependente 
+join funcionario on(Fcpf = Cpf)
+where Pnome like 'A%';
+   TT Nome_dependente(~Pnome like 'A%'(dependente |x|~Fcpf=Cpf funcionario))
+junc <- (dependente |x|~Fcpf=Cpf funcionario)
+res <- ~Pnome like 'A%'(junc)
+proj <- TT Nome_dependente (res)
+
+g)
+select Fcpf
+from dependente
+where Nome_dependente = 'Joana Bagual';
+   TT Fcpf(~Nome_dependente='Joana Bagual'(dependente))
+dep <- (dependente)
+res <- ~Nome_dependente='Joana Bagual'(dep)
+proj <- TT Fcpf (res)
+
+h)
+select Pnome, Unome, Dnome
+from funcionario
+join departamento on(Dnr = Dnumero)
+join trabalha_em on(Cpf = Fcpf)
+join projeto on(Pnr = Projnumero)
+where Projnome = 'Cama Hiperbárica';
+   TT Pnome, Unome, Dnome(~Projnome='Cama Hiperbárica'(funcionario |x|~Dnr=Dnumero departamento |x|~Cpf=Fcpf trabalha_em |x|~Pnr=Projnumero projeto))
+junc1 <- (funcionario |x|~Dnr=Dnumero departamento)
+junc2 <- (junc1 |x|~Cpf=Fcpf trabalha_em)
+junc3 <- (junc2 |x|~Pnr=Projnumero projeto)
+res <- ~Projnome='Cama Hiperbárica'(junc3)
+proj <- TT Pnome, Unome, Dnome (res)
+
+i)
+select Cpf_supervisor, Cpf
+from funcionario
+where Cpf_supervisor is not null;
+   TT Cpf_supervisor, Cpf(~Cpf_supervisor is not null(funcionario))
+func <- (funcionario)
+res <- ~Cpf_supervisor is not null(func)
+proj <- TT Cpf_supervisor, Cpf (res)
+
+j)
+select Pnome, Unome, Dlocal, Dnome, Horas
+from funcionario
+join departamento on(Dnr = Dnumero)
+join localizacoes_dep on(Dnumero = localizacoes_dep.Dnumero)
+join trabalha_em on(Cpf = Fcpf)
+where Horas = (select max(Horas) from trabalha_em);
+   TT Pnome, Unome, Dlocal, Dnome, Horas(~Horas=max(Horas)(funcionario |x|~Dnr=Dnumero departamento |x|~Dnumero=localizacoes_dep.Dnumero localizacoes_dep |x|~Cpf=Fcpf trabalha_em))
+junc1 <- (funcionario |x|~Dnr=Dnumero departamento)
+junc2 <- (junc1 |x|~Dnumero=localizacoes_dep.Dnumero localizacoes_dep)
+junc3 <- (junc2 |x|~Cpf=Fcpf trabalha_em)
+res <- ~Horas=max(Horas)(junc3)
+proj <- TT Pnome, Unome, Dlocal, Dnome, Horas (res)
+
+k)
+select Pnome, Unome
+from funcionario
+where Cpf_supervisor is null;
+   TT Pnome, Unome(~Cpf_supervisor is null(funcionario))
+func <- (funcionario)
+res <- ~Cpf_supervisor is null(func)
+proj <- TT Pnome, Unome (res)
+
+l)
+select Pnome, Unome
+from funcionario
+join trabalha_em on(Cpf = Fcpf)
+where Horas > 15 AND Horas < 30;
+   TT Pnome, Unome(~Horas>15 AND Horas<30(funcionario |x|~Cpf=Fcpf trabalha_em))
+junc <- (funcionario |x|~Cpf=Fcpf trabalha_em)
+res <- ~Horas>15 AND Horas<30(junc)
+proj <- TT Pnome, Unome (res)
+
+m)
+select Pnome, Unome
+from funcionario
+join trabalha_em on(Cpf = Fcpf)
+join projeto on(Pnr = Projnumero)
+where (Projlocal = 'São Paulo' AND Horas >= 10 AND Horas <= 20)
+   OR (Projlocal = 'Rio de Janeiro' AND Horas >= 15);
+   TT Pnome, Unome(~(Projlocal='São Paulo' AND Horas>=10 AND Horas<=20) OR (Projlocal='Rio de Janeiro' AND Horas>=15)(funcionario |x|~Cpf=Fcpf trabalha_em |x|~Pnr=Projnumero projeto))
+junc1 <- (funcionario |x|~Cpf=Fcpf trabalha_em)
+junc2 <- (junc1 |x|~Pnr=Projnumero projeto)
+res <- ~(Projlocal='São Paulo' AND Horas>=10 AND Horas<=20) OR (Projlocal='Rio de Janeiro' AND Horas>=15)(junc2)
+proj <- TT Pnome, Unome (res)

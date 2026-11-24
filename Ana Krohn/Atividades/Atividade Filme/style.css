@@ -1,0 +1,142 @@
+/* Definição das Variáveis CSS */
+:root {
+    /* Cores */
+    --cor-card: #290000;
+    --cor-primaria: #dcdcdc;
+    --cor-texto: #e0e1dd;
+    --cor-texto-secundario: #a9b4c2;
+
+    /* Fontes */
+    --fonte-titulo: 'Georgia', serif;
+    --fonte-corpo: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* Espaçamentos e Bordas */
+    --espaco-pequeno: 0.75rem;
+    --espaco-medio: 1.5rem;
+    --espaco-grande: 2.5rem;
+    --borda-arredondada: 8px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(130deg,var(--cor-primaria), var(--cor-card));
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    text-align: center;
+    padding: var(--espaco-grande) var(--espaco-medio);
+}
+
+.cabecalho h1 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    font-size: 2.2rem;
+    margin-bottom: var(--espaco-pequeno);
+}
+
+.subtitulo {
+    color: var(--cor-texto-secundario);
+    font-style: italic;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--espaco-grande) var(--espaco-medio);
+}
+
+/* Seção de Destaque usando Flexbox */
+.destaque {
+    display: flex;
+    gap: var(--espaco-grande);
+    padding: var(--espaco-medio);
+    margin-bottom: var(--espaco-grande);
+    align-items: center;
+}
+
+.capa-filme {
+    width: 280px;
+    border-radius: var(--borda-arredondada);
+    border: 2px solid var(--cor-primaria);
+    flex-shrink: 0;
+}
+
+.sinopse-box h2,
+.elenco-secao h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+    margin-bottom: var(--espaco-pequeno);
+}
+
+.sinopse-box p {
+    margin-bottom: var(--espaco-medio);
+}
+
+.ficha-tecnica {
+    padding: var(--espaco-medio);
+    border-radius: var(--borda-arredondada);
+    border-left: 4px solid var(--cor-primaria);
+}
+
+.ficha-tecnica p {
+    margin-bottom: 0.4rem;
+}
+
+.ficha-tecnica p:last-child {
+    margin-bottom: 0;
+}
+
+/* Seção de Elenco usando CSS Grid */
+.grid-elenco {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espaco-medio);
+    margin-top: var(--espaco-medio);
+}
+
+.card-ator {
+    padding: var(--espaco-medio);
+    border-radius: var(--borda-arredondada);
+    border-top: 3px solid var(--cor-primaria);
+    text-align: center;
+}
+
+.card-ator h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: 0.3rem;
+}
+
+.card-ator p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center;
+    padding: var(--espaco-medio);
+    color: var(--cor-texto-secundario);
+    font-size: 0.9rem;
+    margin-top: var(--espaco-grande);
+}
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+    .destaque {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ficha-tecnica {
+        text-align: left;
+    }
+}

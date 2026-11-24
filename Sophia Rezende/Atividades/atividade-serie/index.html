@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página sobre a série Game of Thrones: sinopse, ficha técnica, destaques e elenco principal.">
+    <title>Game of Thrones — A Série</title>
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+        :root {
+            --wildling-white: #A9AA90;
+            --lannister-gold: #F0C264;
+            --moon-door-blue: #C5CFD2;
+            --white-walker: #CFD3D0;
+            --high-sparrow: #A29B8B;
+            --dorne-light: #C9974F;
+            --tommen-tears: #9FBCD6;
+            --direwolf-paw: #8F9E98;
+            --baratheon-brown: #5F5A45;
+            --ygritte-locks: #C2561E;
+            --brienne-bravery: #6490B8;
+            --castle-black: #6B7473;
+            --house-red: #A63A3A;
+            --deep-teal: #1F4256;
+            --charcoal: #2F3A3E;
+
+            --bg-color: #D8D3C6;
+            --card-bg: #ECE8DD;
+            --card-inner: #F6F3EA;
+            --text-main: #2F3A3E;
+            --text-muted: #5F5A45;
+            --border-color: #A29B8B;
+            --accent: #C2561E;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            --bs-secondary-color: var(--text-muted);
+        }
+
+        /* Cabeçalho */
+        .titulo-pagina {
+            background: linear-gradient(30deg, var(--charcoal), var(--deep-teal));
+            color: white;
+            padding: 24px 32px;
+            margin-bottom: 32px;
+            border-bottom: 4px solid var(--lannister-gold);
+        }
+
+        /* Seções */
+        .secao {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            padding: 32px;
+        }
+
+        .secao h2 {
+            color: var(--accent);
+        }
+
+        /* Faixa */
+        .faixa-casas {
+            height: 4px;
+            border-radius: 4px;
+            background: linear-gradient(90deg,
+                var(--house-red) 0 25%,
+                var(--lannister-gold) 25% 50%,
+                var(--brienne-bravery) 50% 75%,
+                var(--direwolf-paw) 75% 100%);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb a {
+            color: var(--deep-teal);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Carousel */
+        .carousel-item {
+            height: 420px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+
+        .carousel-item img.logo {
+            object-fit: contain;
+        }
+
+        .slide-preto {
+            background-color: var(--charcoal);
+        }
+
+        .slide-texto {
+            height: 420px;
+            background: linear-gradient(30deg, var(--deep-teal), var(--brienne-bravery));
+            color: white;
+        }
+
+        .carousel-caption {
+            background-color: rgba(47, 58, 62, 0.75);
+            border-radius: 8px;
+            padding: 12px 16px;
+            bottom: 24px;
+        }
+
+        /* Citação */
+        blockquote {
+            border-left: 4px solid var(--lannister-gold);
+            padding-left: 16px;
+            color: var(--text-muted);
+        }
+
+        /* Ficha técnica */
+        .card {
+            background-color: var(--card-inner);
+            border-color: var(--border-color);
+        }
+
+        .ficha-tecnica .card-header {
+            background-color: var(--moon-door-blue);
+            color: var(--charcoal);
+        }
+
+        .list-group-item {
+            background-color: transparent;
+            color: var(--text-main);
+            border-color: var(--border-color);
+        }
+
+        /* Elenco */
+        .card-personagem {
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-personagem:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-personagem .card-header {
+            color: white;
+            font-weight: 600;
+        }
+
+        .card-personagem .casa-stark      { background-color: var(--castle-black); }
+        .card-personagem .casa-targaryen  { background-color: var(--house-red); }
+        .card-personagem .casa-lannister  { background-color: var(--lannister-gold); color: var(--charcoal); }
+
+        .foto-personagem {
+            height: 260px;
+            object-fit: cover;
+            object-position: center 20%;
+        }
+
+        .card-footer {
+            background-color: var(--moon-door-blue);
+            color: var(--charcoal);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BREADCRUMB -->
+    <nav aria-label="breadcrumb" class="container pt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#"><i class="bi bi-house-door-fill me-1"></i>Início</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#">Séries</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Game of Thrones</li>
+        </ol>
+    </nav>
+
+    <!-- CABEÇALHO -->
+    <header class="titulo-pagina">
+        <div class="container">
+            <h1 class="mb-1">
+                <i class="bi bi-shield-shaded me-2"></i>
+                Game of Thrones
+            </h1>
+            <p class="mb-0">
+                Guerra, intrigas e fantasia na disputa pelo Trono de Ferro
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- DESTAQUES -->
+        <section class="secao mb-4" id="destaques">
+            <h2><i class="bi bi-images me-2"></i>Destaques da Série</h2>
+            <p class="text-muted">Passe pelos destaques do mundo de Westeros.</p>
+
+            <div id="carouselSerie" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselSerie" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+
+                <div class="carousel-inner rounded">
+
+                    <div class="carousel-item active">
+                        <img
+                            src="https://wiki.geloefogo.com/images/5/58/Mapa_Westeros_by_Henning_Ludvigsen%2C_Fantasy_Flight_Games.jpg" 
+                            alt="Imagem da série Game of Thrones">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Bem-vindo a Westeros</h3>
+                            <p class="mb-0">Uma das maiores séries da história da TV, produzida pela HBO.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img
+                            src="https://img.odcdn.com.br/wp-content/uploads/2021/04/O-Trono-de-Ferro-de-Game-of-Thrones-1024x576.jpeg"
+                            alt="O Trono de Ferro, símbolo do poder em Game of Thrones"
+                            loading="lazy">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>O Trono de Ferro</h3>
+                            <p class="mb-0">O prêmio disputado por todas as grandes casas dos Sete Reinos.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item slide-preto">
+                        <img
+                            class="logo"
+                            src="https://img.odcdn.com.br/wp-content/uploads/2021/04/Logo-de-Game-of-Thrones.jpg"
+                            alt="Logotipo da série Game of Thrones"
+                            loading="lazy">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>De 2011 a 2019</h3>
+                            <p class="mb-0">A série ficou no ar por oito anos na HBO.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="slide-texto d-flex flex-column justify-content-center align-items-center text-center px-4">
+                            <i class="bi bi-collection-play display-3 mb-2"></i>
+                            <h3>8 temporadas · 73 episódios</h3>
+                            <p class="mb-0">Baseada nos livros &quot;As Crônicas de Gelo e Fogo&quot;, de George R. R. Martin.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSerie" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselSerie" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SINOPSE -->
+        <section class="secao mb-4" id="sinopse">
+            <h2><i class="bi bi-book me-2"></i>Sobre a Série</h2>
+            <div class="faixa-casas mb-4"></div>
+
+            <div class="row g-4">
+
+                <article class="col-12 col-lg-8">
+                    <h3>Sinopse</h3>
+                    <p>
+                        Em Westeros, um mundo inspirado na Idade Média e cheio de elementos de
+                        fantasia, o rei Robert Baratheon governa os Sete Reinos. Quando ele convida
+                        Ned Stark para ser seu conselheiro, Ned descobre segredos perigosos da
+                        família Lannister, e o que parecia paz se transforma em guerras e traições.
+                    </p>
+                    <p>
+                        Com a morte do rei, as grandes casas entram em guerra pelo Trono de Ferro.
+                        Enquanto isso, no extremo norte, Jon Snow defende a Muralha e tenta alertar
+                        os reinos sobre uma ameaça muito maior: os Caminhantes Brancos.
+                    </p>
+                    <blockquote class="blockquote">
+                        <p class="mb-0 fst-italic">&quot;O inverno está chegando.&quot;</p>
+                        <footer class="blockquote-footer mt-1">Lema da Casa Stark</footer>
+                    </blockquote>
+                </article>
+
+                <aside class="col-12 col-lg-4">
+                    <div class="card ficha-tecnica">
+                        <div class="card-header fw-bold">
+                            <i class="bi bi-info-circle me-2"></i>Ficha técnica
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Título:</b> Game of Thrones</li>
+                            <li class="list-group-item"><b>Emissora:</b> HBO</li>
+                            <li class="list-group-item"><b>Exibição:</b> 2011 a 2019</li>
+                            <li class="list-group-item"><b>Temporadas:</b> 8 (73 episódios)</li>
+                            <li class="list-group-item"><b>Gênero:</b> Fantasia e drama</li>
+                            <li class="list-group-item"><b>Criadores:</b> David Benioff e D.B. Weiss</li>
+                            <li class="list-group-item"><b>Base:</b> Livros de George R. R. Martin</li>
+                        </ul>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ELENCO -->
+        <section class="secao mb-4" id="elenco">
+            <h2><i class="bi bi-people-fill me-2"></i>Elenco Principal</h2>
+            <p class="text-muted">Conheça alguns dos personagens e os atores que os interpretaram.</p>
+
+            <div class="row g-4">
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-targaryen">Casa Targaryen</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://t.ctcdn.com.br/uOi4m3JRLaQn1-xjZUbY0uPkWuk=/1200x675/smart/i607097.jpeg"
+                            alt="Emilia Clarke como Daenerys Targaryen"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Daenerys Targaryen</h3>
+                            <p class="card-text text-muted">A &quot;Mãe dos Dragões&quot;, que quer reconquistar o trono da família.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Emilia Clarke
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-stark">Casa Stark</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://media.allure.com/photos/5b296eb1555359139be7de7e/16:9/w_2560%2Cc_limit/d07607a39c56110cf069d1a922299f327c7caab919cca952e396a4969a7a4d766dbb5e56900658ec0f868fe2ad9d7045.jpg"
+                            alt="Kit Harington como Jon Snow"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Jon Snow</h3>
+                            <p class="card-text text-muted">Comandante da Patrulha da Noite, que protege a Muralha.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Kit Harington
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-lannister">Casa Lannister</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://www.estrelando.com.br/uploads/2017/06/08/tyrion-game-of-thrones-10-1496938841.jpg"
+                            alt="Peter Dinklage como Tyrion Lannister"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Tyrion Lannister</h3>
+                            <p class="card-text text-muted">Esperto e sarcástico, usa a inteligência para sobreviver.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Peter Dinklage
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-lannister">Casa Lannister</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://static1.purepeople.com.br/articles/6/26/50/6/@/258939-lena-headey-interpreta-a-rainha-cersei-580x0-2.jpg"
+                            alt="Lena Headey como Cersei Lannister"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Cersei Lannister</h3>
+                            <p class="card-text text-muted">Rainha ambiciosa, disposta a tudo para manter o poder.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Lena Headey
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-lannister">Casa Lannister</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://media.wired.com/photos/5933640ba88f414d9a8c7d8f/3:2/w_2560%2Cc_limit/jaime.jpg"
+                            alt="Nikolaj Coster-Waldau como Jaime Lannister"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Jaime Lannister</h3>
+                            <p class="card-text text-muted">Cavaleiro habilidoso e irmão gêmeo de Cersei.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Nikolaj Coster-Waldau
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-stark">Casa Stark</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://i.pinimg.com/474x/21/60/d4/2160d4dc5e50163c839a35d908260b9e.jpg"
+                            alt="Sean Bean como Eddard Stark"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Eddard &quot;Ned&quot; Stark</h3>
+                            <p class="card-text text-muted">Senhor de Winterfell, honrado e fiel à família.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Sean Bean
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-stark">Casa Stark</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://cloudfront-us-east-1.images.arcpublishing.com/estadao/ZRGUHD4X45J3RBDMTYNTQGWEKY.jpg"
+                            alt="Maisie Williams como Arya Stark"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Arya Stark</h3>
+                            <p class="card-text text-muted">Jovem destemida que treina para se tornar uma guerreira.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Maisie Williams
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col-12 col-sm-6 col-lg-3">
+                    <div class="card card-personagem h-100">
+                        <div class="card-header casa-stark">Casa Stark</div>
+                        <img
+                            class="card-img-top foto-personagem"
+                            src="https://catracalivre.com.br/wp-content/uploads/2017/06/sansa_stark_game_of_thrones.jpg"
+                            alt="Sophie Turner como Sansa Stark"
+                            loading="lazy">
+                        <div class="card-body text-center">
+                            <h3 class="h5 card-title">Sansa Stark</h3>
+                            <p class="card-text text-muted">Aprende com as intrigas da corte e amadurece ao longo da história.</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <i class="bi bi-camera-reels me-1"></i>Sophie Turner
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="text-center text-muted py-4">
+        <div class="container">
+            <div class="faixa-casas mb-3"></div>
+            <p class="mb-1">&copy;2026 Todos os direitos reservados.</p>
+            <p class="small mb-0">Game of Thrones é uma série da HBO, baseada nos livros de George R. R. Martin. Imagens de divulgação, usadas apenas para fins educacionais.</p>
+        </div>
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+</body>
+</html>

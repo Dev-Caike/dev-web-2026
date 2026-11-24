@@ -1,0 +1,215 @@
+:root {
+    --primary-color: #0b3c70; /* Cor primaria */
+    --secondary-color: #38bdf8; /* Cor secundaria */
+    --bg-color: #f8fafc; /* Cor de fundo */
+    --card-bf-color: #ffffff; /* Cor de fundo do card */
+    --text-main: #0f2942; /* Cor do texto principal */
+    --text-mutated: #5b7a99; /* Cor do texto mutado */
+    --border-color: #1d6fb8; /* Cor da borda */
+    --radius: 12px; /* Raio da borda */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: "Gill Sans";
+    color: var(--text-main);
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    
+}
+
+header {
+    background:
+        radial-gradient(at 20% 20%, #38bdf8 0px, transparent 50%),
+        radial-gradient(at 80% 30%, #6366f1 0px, transparent 50%),
+        radial-gradient(at 40% 90%, #0ea5e9 0px, transparent 50%),
+        #0b3c70;;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 15px -3px var(--border-color);
+}
+
+header h1{
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+header p{
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 2rem 0;
+}
+
+nav{
+    background-color: var(--card-bg);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 3px 0 var(--text-mutated);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+nav h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+nav a { 
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section > h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+article {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 3px 0 var(--text-mutated);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out,
+    box-shadow 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -6px var(--border-color);
+}
+
+article h3 {
+    font-size: 1.4rem;
+    color: var(--text-main);
+}
+
+article img {
+    width: 100%;
+    border-radius: calc(var(--radius) - 4px);
+    object-fit: cover;
+}
+
+article a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+article a:hover {
+    opacity: 0.6;
+    text-decoration: underline; 
+}
+
+aside {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+aside h2, aside h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+aside img {
+    width: 110px;
+    height: 110px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+aside ol {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style-position: inside;
+}
+
+aside ol a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+aside ol a:hover {
+    color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

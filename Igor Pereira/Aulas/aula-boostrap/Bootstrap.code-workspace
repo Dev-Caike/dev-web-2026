@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../Bootstrap"
+		},
+		{
+			"path": "../../Atividades/Bootstrap"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Bootstrap"
+	}
+}

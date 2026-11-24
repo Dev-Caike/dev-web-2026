@@ -1,0 +1,365 @@
+/* DUNA | Folha de estilos
+   Atividade acadêmica: HTML semântico + CSS separado.
+*/
+
+/* 1. Variáveis globais: cores, fontes e espaçamentos */
+:root {
+    --cor-fundo: #15120f;
+    --cor-fundo-claro: #211b15;
+    --cor-areia: #d8b98a;
+    --cor-destaque: #f0d5a7;
+    --cor-texto: #f5f0e8;
+    --cor-texto-suave: #b8aa98;
+    --fonte-principal: Arial, Helvetica, sans-serif;
+    --espaco-pequeno: 0.75rem;
+    --espaco-medio: 1.5rem;
+    --espaco-grande: 4rem;
+    --largura-maxima: 1120px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 2. Cabeçalho: Flexbox para alinhar logo e menu */
+.cabecalho {
+    width: min(100% - 3rem, var(--largura-maxima));
+    margin: 0 auto;
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espaco-medio);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+}
+
+.logo span {
+    color: var(--cor-areia);
+}
+
+.navegacao {
+    display: flex;
+    gap: 2rem;
+}
+
+.navegacao a,
+.voltar {
+    color: var(--cor-texto-suave);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.navegacao a:hover,
+.voltar:hover {
+    color: var(--cor-destaque);
+}
+
+/* 3. Área principal de destaque */
+.hero {
+    min-height: 610px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(90deg, rgba(21, 18, 15, 0.96) 0%, rgba(21, 18, 15, 0.78) 42%, rgba(21, 18, 15, 0.18) 100%),
+        linear-gradient(0deg, var(--cor-fundo), transparent 35%),
+        url("https://dunenewsnet.com/wp-content/uploads/2021/08/Dune-Movie-Main-Poster.jpg") center 38% / cover;
+}
+
+.hero-conteudo {
+    width: min(100% - 3rem, var(--largura-maxima));
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 5rem 0;
+}
+
+.etiqueta {
+    color: var(--cor-areia);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-size: clamp(4.5rem, 13vw, 9rem);
+    line-height: 1;
+    letter-spacing: 0.16em;
+    font-weight: 500;
+}
+
+.subtitulo {
+    color: var(--cor-texto-suave);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin: 1.5rem 0 2rem;
+    max-width: 440px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.95rem 1.25rem;
+    border: 1px solid var(--cor-areia);
+    color: var(--cor-destaque);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.botao:hover {
+    background: var(--cor-areia);
+    color: var(--cor-fundo);
+}
+
+.hero-legenda {
+    position: absolute;
+    right: max(1.5rem, calc((100% - var(--largura-maxima)) / 2));
+    bottom: 2rem;
+    color: var(--cor-texto-suave);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+}
+
+/* 4. Seções de conteúdo */
+.secao {
+    width: min(100% - 3rem, var(--largura-maxima));
+    margin: 0 auto;
+    padding: var(--espaco-grande) 0;
+}
+
+.sinopse {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.secao h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.secao h2 span {
+    color: var(--cor-areia);
+}
+
+.texto-sinopse {
+    color: var(--cor-texto-suave);
+    max-width: 620px;
+}
+
+.texto-sinopse p + p {
+    margin-top: 1rem;
+}
+
+.faixa-citacao {
+    padding: 3.5rem 1.5rem;
+    text-align: center;
+    background: var(--cor-fundo-claro);
+    border-top: 1px solid rgba(216, 185, 138, 0.2);
+    border-bottom: 1px solid rgba(216, 185, 138, 0.2);
+}
+
+.faixa-citacao p {
+    color: var(--cor-destaque);
+    font-size: clamp(1.3rem, 3vw, 2.2rem);
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
+.faixa-citacao span {
+    display: block;
+    color: var(--cor-texto-suave);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    margin-top: 1rem;
+}
+
+/* 5. Elenco: CSS Grid para organizar os cartões */
+.cabecalho-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.nota-secao {
+    color: var(--cor-texto-suave);
+    max-width: 250px;
+    font-size: 0.9rem;
+}
+
+.grade-elenco {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(216, 185, 138, 0.22);
+    border: 1px solid rgba(216, 185, 138, 0.22);
+}
+
+.card-elenco {
+    min-height: 155px;
+    padding: 1.5rem;
+    background: var(--cor-fundo);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.numero {
+    color: var(--cor-areia);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    margin-bottom: auto;
+}
+
+.card-elenco h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.card-elenco p {
+    color: var(--cor-texto-suave);
+    font-size: 0.85rem;
+}
+
+/* 6. Ficha técnica */
+.ficha {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4rem;
+    border-top: 1px solid rgba(216, 185, 138, 0.22);
+}
+
+.ficha-dados {
+    display: grid;
+    gap: 0;
+}
+
+.dado {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(216, 185, 138, 0.18);
+}
+
+.dado span {
+    color: var(--cor-texto-suave);
+}
+
+.dado strong {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+/* 7. Rodapé */
+.rodape {
+    width: min(100% - 3rem, var(--largura-maxima));
+    margin: 0 auto;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(216, 185, 138, 0.22);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.rodape p {
+    color: var(--cor-texto-suave);
+    font-size: 0.8rem;
+}
+
+/* 8. Responsividade: adapta o layout para telas menores */
+@media (max-width: 700px) {
+    .cabecalho {
+        min-height: 75px;
+        flex-wrap: wrap;
+        padding: 1rem 0;
+    }
+
+    .navegacao {
+        gap: 1rem;
+    }
+
+    .navegacao a {
+        font-size: 0.65rem;
+    }
+
+    .hero {
+        min-height: 540px;
+        background-position: 58% center;
+    }
+
+    .sinopse,
+    .ficha {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .grade-elenco {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cabecalho-secao {
+        align-items: start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .rodape {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 420px) {
+    .navegacao {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .grade-elenco {
+        grid-template-columns: 1fr;
+    }
+
+    .dado {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .dado strong {
+        text-align: left;
+    }
+}

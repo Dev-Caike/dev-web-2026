@@ -1,0 +1,33 @@
+Link Figma:
+https://www.figma.com/design/q1qeJNicp705MDipyU1Gmi/Sem-t%C3%ADtulo?node-id=0-1&t=1COTrdu3j5mHBl6D-1
+
+
+Descrição:
+Logo e protótipo desktop
+
+Logo da LATAM (roxo escuro com o símbolo característico em degradê rosa/vermelho) junto com suas cores de marca (background, primary, secondary)
+Um wireframe/protótipo de tela desktop mostrando a estrutura básica de navegação em roxo, com abas e botões de destaque em vermelho
+
+Cabeçalho
+
+Uma barra simples com o texto "DESIGN SYSTEM"
+
+Cores
+
+Paleta dividida em modo Light e Dark, cada uma com as variáveis: primary, secondary, tertiary, background, onBackground e onSurface — um padrão típico de design tokens (como no Material Design)
+
+Tipografia
+
+Amostras da fonte usada, mostrando hierarquia: Headline, subtitle, body, button e title
+Uma segunda seção "Typography" com a frase pangrama "The quick brown fox jumps over the lazy dog" em diferentes pesos/tamanhos
+
+Componentes
+
+Botões em três variações de cor (Primário, Secundário, Terciário) e três estilos (default, outline, disable)
+Toggles/switches nas mesmas cores
+Amostras de cores em cartões (swatches) e exemplos de tags/labels ("título") em fundo claro e escuro
+Ícones ou logos aplicados em fundo claro/escuro (LATAM)
+
+Cabeçalho de protótipos de telas
+
+Três telas de exemplo do app/mobile: Login (destacada com borda rosa, mostrando campos de usuário/senha), Perfil 22 e Perfil 2 (variações de tela de perfil de usuário)

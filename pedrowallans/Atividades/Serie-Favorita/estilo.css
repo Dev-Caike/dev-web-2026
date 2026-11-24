@@ -1,0 +1,73 @@
+:root {
+  --got-fundo: #0b0b0f;
+  --got-ouro: #c9a24d;
+  --got-stark: #5b6b7a;
+  --got-targaryen: #8b1d1d;
+  --got-lannister: #a67c00;
+  --got-fonte-titulo: "Cinzel", Georgia, serif;
+}
+
+body {
+  background-color: var(--got-fundo);
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Títulos */
+.got-titulo {
+  font-family: var(--got-fonte-titulo);
+  letter-spacing: 0.05em;
+}
+
+/* Capa */
+.got-capa {
+  max-height: 520px;
+  background: linear-gradient(160deg, #1b1b24, var(--got-fundo));
+}
+
+/* Slides do carousel */
+.got-slide {
+  min-height: 360px;
+  padding: 3rem 4rem;
+}
+
+.got-stark     { background: linear-gradient(135deg, #1c2733, var(--got-stark)); }
+.got-targaryen { background: linear-gradient(135deg, #1a0707, var(--got-targaryen)); }
+.got-lannister { background: linear-gradient(135deg, #2a1d00, var(--got-lannister)); }
+.got-muralha   { background: linear-gradient(135deg, #0f2233, #8fb8d6); }
+
+/* Cards */
+.got-card {
+  border-color: #2a2a35;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.got-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--got-ouro);
+}
+
+.got-faixa-stark     { background-color: var(--got-stark); }
+.got-faixa-targaryen { background-color: var(--got-targaryen); }
+.got-faixa-lannister { background-color: var(--got-lannister); }
+
+.card-header[class*="got-faixa"] {
+  color: #fff;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Telas pequenas */
+@media (max-width: 576px) {
+  .got-slide {
+    padding: 2rem 2.5rem;
+  }
+}

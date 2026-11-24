@@ -1,0 +1,5 @@
+avaliação 1: https://www.figma.com/design/5RBhcFeIF8wIMnpOawYYsy/Sem-t%C3%ADtulo?node-id=0-1\&t=1hwxIxFZjPi9HuQB-1
+
+Professor, segue o resumo do projeto desenvolvido no Figma e a descrição dos componentes e fluxos criados:1. Design System e Componentização Criei o componente base da AppBar utilizando Auto Layout (com o espaçamento em Auto para manter o alinhamento responsivo dos ícones e textos).Desenvolvi três variantes de cor para o componente: Primary (verde principal), Secondary (tom intermediário) e Dark (versão escura).2. Estruturação e Posição nas TelasPosicionei a AppBar no topo exato ($Y = 0$) de todas as telas (iPhone 17 - 1, iPhone 17 - 2 e Perfil), preenchendo toda a largura da interface.Personalizei os textos dos cabeçalhos em cada instância para alinhar com o contexto da navegação: Login na tela inicial, Conta na tela seguinte e Perfil nas telas de extrato.3. Prototipagem e Fluxo de NavegaçãoConfigurei as conexões e interações entre as telas no modo Protótipo (Flow 1).Conectei os botões de ação (Salvar, Ver E-mail, entre outros) para criar uma transição fluida entre o fluxo de login, conta e histórico de transações.
+===
+

@@ -1,0 +1,179 @@
+/* Variáveis CSS: definição de cores, fontes e espaçamentos no :root */
+:root {
+    --cor-fundo: #121212; /* Fundo muito escuro */
+    --cor-texto: #e0e0e0; /* Texto claro */
+    --cor-destaque: #ff2a2a; /* Vermelho vibrante estilo corrida */
+    --cor-fundo-card: #1e1e1e; /* Fundo dos cartões */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --fonte-titulos: 'Impact', 'Arial Black', sans-serif;
+    --espacamento-pequeno: 10px;
+    --espacamento-medio: 20px;
+    --espacamento-grande: 40px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+}
+
+/* Estilos do Cabeçalho */
+.cabecalho-filme {
+    background-color: var(--cor-fundo-card);
+    text-align: center;
+    padding: var(--espacamento-grande) var(--espacamento-medio);
+    border-bottom: 3px solid var(--cor-destaque);
+    text-transform: uppercase;
+}
+
+.cabecalho-filme h1 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-destaque);
+    font-size: 3.5rem;
+    margin-bottom: var(--espacamento-pequeno);
+    letter-spacing: 2px;
+}
+
+.cabecalho-filme p {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+}
+
+/* Layout: Flexbox para organizar a estrutura principal */
+.conteudo-principal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--espacamento-grande) var(--espacamento-medio);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-grande);
+}
+
+/* Seção de Destaque usando Flexbox */
+.seccao-destaque {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-medio);
+    background-color: var(--cor-fundo-card);
+    padding: var(--espacamento-medio);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Query para ecrãs maiores (Responsividade) */
+@media (min-width: 768px) {
+    .seccao-destaque {
+        flex-direction: row; /* Coloca imagem e texto lado a lado em ecrãs maiores */
+        align-items: flex-start;
+    }
+}
+
+.container-imagem {
+    flex: 1;
+    max-width: 100%;
+}
+
+.imagem-capa {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 2px solid #333;
+}
+
+.detalhes-filme {
+    flex: 2; /* Ocupa o dobro do espaço da imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalhes-filme h2 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-destaque);
+    font-size: 2rem;
+    margin-bottom: var(--espacamento-pequeno);
+    letter-spacing: 1px;
+}
+
+.detalhes-filme p {
+    margin-bottom: var(--espacamento-medio);
+    text-align: justify;
+    font-size: 1.1rem;
+}
+
+.info-tecnica p {
+    margin-bottom: var(--espacamento-pequeno);
+    font-size: 1rem;
+    border-left: 3px solid var(--cor-destaque);
+    padding-left: 10px;
+    background-color: rgba(255, 42, 42, 0.05);
+}
+
+/* Seção Elenco usando CSS Grid */
+.seccao-elenco {
+    background-color: var(--cor-fundo-card);
+    padding: var(--espacamento-medio);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.seccao-elenco h2 {
+    font-family: var(--fonte-titulos);
+    color: var(--cor-destaque);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: var(--espacamento-medio);
+    letter-spacing: 1px;
+}
+
+.lista-elenco {
+    display: grid;
+    /* Grid responsiva: colunas dinâmicas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--espacamento-medio);
+}
+
+.ator {
+    background-color: #2a2a2a; 
+    padding: var(--espacamento-medio);
+    text-align: center;
+    border-bottom: 3px solid var(--cor-destaque);
+    border-radius: 6px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ator:hover {
+    transform: translateY(-5px); /* Efeito de flutuar */
+    background-color: #333;
+}
+
+.ator h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.ator p {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #bbb;
+}
+
+/* Estilos do Rodapé */
+.rodape-filme {
+    text-align: center;
+    padding: var(--espacamento-medio);
+    margin-top: var(--espacamento-grande);
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+}

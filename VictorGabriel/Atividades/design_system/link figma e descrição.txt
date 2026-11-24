@@ -1,0 +1,19 @@
+https://www.figma.com/design/GNIO5WiXFzG1F8mfxbY8Hy/Meu-Produto?node-id=0-1&t=flb550mlBIvnbvie-1
+
+
+
+
+
+A imagem apresenta uma área de trabalho no Figma que detalha o Design System e o protótipo de interface para uma aplicação móvel de viagens aéreas chamada "ARES".
+
+* **Cores e Temas:** O sistema documenta paletas detalhadas para os modos "Light" e "Dark", incluindo variáveis de cor para *primary*, *secondary*, *tertiary*, *background*, *onBackground* e *onSurface*.
+* **Tipografia:** A família de fontes estabelecida é a "Nunito", com uma escala tipográfica definida que abrange estilos para *Headline*, *subtitle*, *body*, *button* e *Title*, com exemplos visuais de aplicação.
+* **Componentes:** Exibe uma biblioteca estruturada de botões (Primário, Secundário e Terciário) com as respetivas variantes de estado (Default, Outline, Disable e Loading), além de blocos para cartões de pagamento.
+* **Protótipo e Ecrãs:** Na secção inferior, apresenta o fluxo da aplicação através de quatro ecrãs principais:
+* **Login:** Apresenta um fundo azul com o logótipo da ARES em grande destaque.
+* **Buscar Voos:** Uma interface limpa que inclui uma AppBar escura no topo com a foto de perfil da utilizadora e o título da secção.
+* **Detalhes:** Um ecrã de preenchimento ou confirmação de dados com campos e botões de ação.
+* **Reserva Confirmada:** O ecrã de sucesso que exibe um ícone de visto e o botão para voltar ao início.
+
+
+* **Elementos Estruturais:** No topo esquerdo (Frame 1 e 2), encontram-se as definições iniciais da marca, o logótipo (um avião estilizado) e um *wireframe* de blocos cinzentos que serve de base para o layout.

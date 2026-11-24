@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARK - Série Netflix</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #101820;
+            color: #f1f1f1;
+        }
+
+        header {
+            background-color: #080d12;
+            padding: 35px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #c9a66b;
+            font-size: 55px;
+            letter-spacing: 10px;
+        }
+
+        .breadcrumb {
+            background-color: #1b2833;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .breadcrumb-item a {
+            color: #c9a66b;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item.active {
+            color: white;
+        }
+
+        h2 {
+            color: #c9a66b;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: #1b2833;
+            color: white;
+            border: 1px solid #52606d;
+            height: 100%;
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .carousel img {
+            height: 450px;
+            object-fit: cover;
+            filter: brightness(65%);
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #080d12;
+            color: #c9a66b;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .texto {
+            line-height: 1.8;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>DARK</h1>
+        <p class="lead">O passado, o presente e o futuro estão conectados.</p>
+    </header>
+
+    <main class="container mt-4">
+
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Início</a></li>
+                <li class="breadcrumb-item"><a href="#">Séries</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dark</li>
+            </ol>
+        </nav>
+
+        <!-- Sobre a série -->
+        <section class="my-5">
+            <h2>Sobre a série</h2>
+
+            <p class="texto">
+                Dark é uma série alemã de suspense, ficção científica e mistério,
+                lançada pela Netflix em 2017. A história acontece na pequena cidade
+                de Winden, onde o desaparecimento de crianças revela segredos
+                assustadores envolvendo quatro famílias e viagens no tempo.
+            </p>
+
+            <p class="texto">
+                Ao longo de três temporadas, os personagens descobrem conexões
+                entre diferentes épocas e percebem que suas escolhas estão
+                relacionadas a acontecimentos do passado, presente e futuro.
+                A série mistura mistério, drama e ficção científica de uma
+                maneira surpreendente.
+            </p>
+
+            <p><strong>Gênero:</strong> Ficção científica, suspense e drama.</p>
+            <p><strong>Lançamento:</strong> 2017.</p>
+            <p><strong>Temporadas:</strong> 3.</p>
+            <p><strong>Idioma original:</strong> Alemão.</p>
+            <p><strong>Plataforma:</strong> Netflix.</p>
+        </section>
+
+        <!-- Carousel -->
+        <section class="my-5">
+            <h2>Galeria de imagens</h2>
+
+            <div id="carouselDark" class="carousel slide" data-bs-ride="carousel">
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselDark"
+                        data-bs-slide-to="0" class="active"></button>
+
+                    <button type="button" data-bs-target="#carouselDark"
+                        data-bs-slide-to="1"></button>
+
+                    <button type="button" data-bs-target="#carouselDark"
+                        data-bs-slide-to="2"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSsQLbiI3QgkXVLJrcqxVXmlXwvA1wYEAypyAFM_A0Bw&s=10"
+                            class="d-block w-100" alt="Floresta misteriosa">
+                        <div class="carousel-caption">
+                            <h5>Bem-vindo a Winden</h5>
+                            <p>Uma cidade cheia de mistérios.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzTuRynGlBD8SYzP62m6bCMoWhD4xAVdx7Q7ALxK35Ag&s=10"
+                            class="d-block w-100" alt="Paisagem misteriosa">
+                        <div class="carousel-caption">
+                            <h5>O tempo é uma ilusão</h5>
+                            <p>Passado, presente e futuro se encontram nessa caverna.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkhRaua-c1Jxcrxi8JJVZHJ9ARUMQVp3Q9MqLgQILF5g&s=10"
+                            class="d-block w-100" alt="Céu noturno">
+                        <div class="carousel-caption">
+                            <h5>O começo é o fim</h5>
+                            <p>Tudo está conectado.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button"
+                    data-bs-target="#carouselDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button"
+                    data-bs-target="#carouselDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
+            </div>
+        </section>
+
+        <!-- Personagens -->
+        <section class="my-5">
+            <h2>Personagens principais</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://th.bing.com/th/id/OIP.JHiNpnJOGrnfUVnXQoBkhQHaFj?w=229&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            class="card-img-top" alt="Imagem do Jonas">
+                        <div class="card-body">
+                            <h5 class="card-title">Jonas Kahnwald</h5>
+                            <p class="card-text">
+                                Um jovem que se envolve nos mistérios de Winden
+                                após o desaparecimento de seu amigo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="data:image/webp;base64,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"
+                            class="card-img-top" alt="Imagem da Martha">
+                        <div class="card-body">
+                            <h5 class="card-title">Martha Nielsen</h5>
+                            <p class="card-text">
+                                Uma personagem fundamental na história,
+                                conectada aos acontecimentos misteriosos da cidade.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="https://th.bing.com/th/id/OIP.9y0hchD1xmAvKFWwkQ5jaQHaEw?w=275&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            class="card-img-top" alt="Imagem do Ulrich">
+                        <div class="card-body">
+                            <h5 class="card-title">Ulrich Nielsen</h5>
+                            <p class="card-text">
+                                Um policial que investiga os desaparecimentos
+                                e acaba envolvido nos segredos de Winden.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Temporadas -->
+        <section class="my-5">
+            <h2>As três temporadas</h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">1ª Temporada</h5>
+                            <p class="card-text">
+                                O desaparecimento de crianças revela uma
+                                passagem misteriosa que conecta diferentes épocas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">2ª Temporada</h5>
+                            <p class="card-text">
+                                Os segredos das famílias ficam ainda mais
+                                profundos e o destino de Winden começa a ser revelado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <div class="card-body">
+                            <h5 class="card-title">3ª Temporada</h5>
+                            <p class="card-text">
+                                Novas realidades surgem e os personagens
+                                precisam descobrir a verdadeira origem do ciclo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Arthur Pereira Mota</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
